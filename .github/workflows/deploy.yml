@@ -13,6 +13,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Install Surge CLI
+        run: npm install --global surge  # Ensure Surge is installed in the Action environment
+
       - name: Deploy to Surge
         env:
           SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}  # We'll set this in the next step
