@@ -1,31 +1,35 @@
-name: Deploy to Surge
+name: deploy to surge
+
 
 on:
   push:
     branches:
-      - unstable  # Change this if you are using a different branch for deployment
+      - main
+
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Install Surge CLI
-        run: npm install --global surge  # Ensure Surge is installed in the Action environment
+      - name: Install Surge
+        run: npm install --global surge
 
       - name: Deploy to Surge
-        env:
-          SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}  # We'll set this in the next step
-        run: surge . ${{ secrets.SURGE_DOMAIN }} --token $SURGE_TOKEN --yes
+        run: surge . https://slugger-snapshot.surge.sh --token ${{ secrets.SURGE_TOKEN }} --yes
+
+      - name: Wait for Surge to finish deployment
+        run: sleep 10
 
       - name: Check if the site is live
         run: |
-          RESPONSE=$(curl --write-out "%{http_code}" --silent --output /dev/null slugger-snapshot.surge.sh)
+          RESPONSE=$(curl --write-out "%{http_code}" --silent --output /dev/null https://slugger-snapshot.surge.sh)
+          echo "Response code: $RESPONSE"
           if [ "$RESPONSE" -ne 200 ]; then
-            echo "Site is down! Status code: $RESPONSE"
+            echo "Site is down or unreachable. Status code: $RESPONSE"
+            curl -v https://slugger-snapshot.surge.sh  # Verbose mode for detailed info
             exit 1
           else
             echo "Site is live! Status code: $RESPONSE"
