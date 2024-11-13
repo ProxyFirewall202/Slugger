@@ -1,11 +1,9 @@
-name: deploy to surge
-
+name: Deploy to Surge
 
 on:
   push:
     branches:
       - unstable
-
 
 jobs:
   deploy:
@@ -14,14 +12,16 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'  # Set to the version compatible with your project
+
       - name: Install Surge
         run: npm install --global surge
 
       - name: Deploy to Surge
         run: surge . https://slugger-snapshot.surge.sh --token ${{ secrets.SURGE_TOKEN }} --yes
-
-      - name: Wait for Surge to finish deployment
-        run: sleep 10
 
       - name: Check if the site is live
         run: |
