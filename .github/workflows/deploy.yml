@@ -4,7 +4,7 @@ name: deploy to surge
 on:
   push:
     branches:
-      - main
+      - unstable
 
 
 jobs:
