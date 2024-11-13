@@ -1,36 +1,22 @@
-name: Deploy to Surge
+name: Deploy to GitHub Pages
 
 on:
   push:
     branches:
-      - unstable
+      - unstable  # Adjust if you're using a different branch
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout code
+      # Step 1: Checkout the code from the repository
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
+      # Step 2: Deploy the contents of the `public` folder to GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          node-version: '16'  # Set to the version compatible with your project
-
-      - name: Install Surge
-        run: npm install --global surge
-
-      - name: Deploy to Surge
-        run: surge . https://slugger-snapshot.surge.sh --token ${{ secrets.SURGE_TOKEN }} --yes
-
-      - name: Check if the site is live
-        run: |
-          RESPONSE=$(curl --write-out "%{http_code}" --silent --output /dev/null https://slugger-snapshot.surge.sh)
-          echo "Response code: $RESPONSE"
-          if [ "$RESPONSE" -ne 200 ]; then
-            echo "Site is down or unreachable. Status code: $RESPONSE"
-            curl -v https://slugger-snapshot.surge.sh  # Verbose mode for detailed info
-            exit 1
-          else
-            echo "Site is live! Status code: $RESPONSE"
-          fi
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./SNAPSHOT150-24.46a5exp_surge_package  # Path to the folder with HTML, CSS, and JS files
