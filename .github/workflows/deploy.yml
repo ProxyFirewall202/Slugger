@@ -1,0 +1,19 @@
+name: Deploy to Surge
+
+on:
+  push:
+    branches:
+      - unstable  # Change this if you are using a different branch for deployment
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Deploy to Surge
+        env:
+          SURGE_TOKEN: ${{ secrets.SURGE_TOKEN }}  # We'll set this in the next step
+        run: surge . ${{ secrets.SURGE_DOMAIN }} --token $SURGE_TOKEN --yes
