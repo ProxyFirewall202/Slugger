@@ -23,7 +23,7 @@ jobs:
 
       - name: Check if the site is live
         run: |
-          RESPONSE=$(curl --write-out "%{http_code}" --silent --output /dev/null <your-domain>.surge.sh)
+          RESPONSE=$(curl --write-out "%{http_code}" --silent --output /dev/null slugger-snapshot.surge.sh)
           if [ "$RESPONSE" -ne 200 ]; then
             echo "Site is down! Status code: $RESPONSE"
             exit 1
