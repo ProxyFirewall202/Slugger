@@ -18,5 +18,5 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GH_TOKEN }}
           publish_dir: ./SNAPSHOT150-24.46a5exp_surge_package  # Path to the folder with HTML, CSS, and JS files
