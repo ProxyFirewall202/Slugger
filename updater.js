@@ -46,11 +46,6 @@ if (fs.existsSync(indexFilePath)) {
     process.exit(1);  // Exit the script if the file doesn't exist
 }
 
-// Step 3: Stage, commit, and push changes
-execSync('git add .');
-execSync('git commit -m "(Extremely unstable) A snapshot of the newest update in the works"');
-execSync('git push origin unstable');
-
 // Function to get all tags
 const getTags = () => {
   const tags = execSync('git tag --list').toString().split('\n').filter(Boolean);
@@ -68,7 +63,7 @@ const countWeeklyReleases = (tags) => {
 
 // Function to count the total number of releases (tags)
 const countTotalReleases = (tags) => {
-  return tags.length;
+  return (tags.length + 1);
 };
 
 // Get current year and week
@@ -86,7 +81,7 @@ const totalReleases = countTotalReleases(tags);
 const releaseLetter = String.fromCharCode(97 + weeklyReleases); // 'a' is 97 in ASCII
 
 // Generate the version tag
-const versionTag = `SNAPSHOT${currentYear}-${currentWeek}-${releaseLetter}${totalReleases}exp`;
+const versionTag = `SNAPSHOT150-${currentYear}.${currentWeek}${releaseLetter}${totalReleases}exp`;
 
 // Output the result for review
 console.log(`Generated version tag: ${versionTag}`);
@@ -96,3 +91,7 @@ execSync(`git tag ${versionTag}`);
 execSync(`git push origin ${versionTag}`);
 
 console.log('Release pushed with tag:', versionTag);
+
+execSync('git add .');
+execSync('git commit -m "(Extremely unstable) A snapshot of the newest update in the works. This specific snapshot version is: ${versionTag}"');
+execSync('git push origin unstable');
