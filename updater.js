@@ -91,11 +91,6 @@ const versionTag = `SNAPSHOT${currentYear}-${currentWeek}-${releaseLetter}${tota
 // Output the result for review
 console.log(`Generated version tag: ${versionTag}`);
 
-// Add, commit, and push the changes
-execSync('git add .');
-execSync('git commit -m "Automated release"');
-execSync(`git push origin unstable`);
-
 // Create a new Git tag and push it
 execSync(`git tag ${versionTag}`);
 execSync(`git push origin ${versionTag}`);
