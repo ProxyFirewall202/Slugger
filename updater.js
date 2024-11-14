@@ -93,5 +93,8 @@ execSync(`git push origin ${versionTag}`);
 console.log('Release pushed with tag:', versionTag);
 
 execSync('git add .');
-execSync('git commit -m "(Extremely unstable) A snapshot of the newest update in the works. This specific snapshot version is: ${versionTag}"');
+// Generate the commit message
+const commitMessage = `(Extremely unstable) A snapshot of the newest update in the works. This specific snapshot version is: ${versionTag}`;
+// Commit the changes with the correct message
+execSync(`git commit -m "${commitMessage}"`);
 execSync('git push origin unstable');
