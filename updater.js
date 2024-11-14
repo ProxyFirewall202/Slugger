@@ -1,7 +1,7 @@
 const moment = require('moment');
+const fs = require('fs');
 
 const { execSync } = require('child_process');
-const fs = require('fs');
 
 // Step 1: Check if we're on the 'unstable' branch
 let currentBranch = execSync('git rev-parse --abbrev-ref HEAD').toString().trim();
@@ -79,6 +79,16 @@ const totalReleases = countTotalReleases(tags);
 
 // Generate the release letter for this week (a, b, c, etc.)
 const releaseLetter = String.fromCharCode(97 + weeklyReleases); // 'a' is 97 in ASCII
+
+// Read suffix from .txt file
+const suffixFilePath = 'C:/Proxys-Machine Syncs/Game Files/Code Save Files/Slugger/Slugger Repo/snapshot-suffix.txt';
+let versionSuffix = 'exp'; // Default value if the file doesn't exist
+
+try {
+    versionSuffix = fs.readFileSync(suffixFilePath, 'utf-8').trim();
+} catch (error) {
+    console.error(`Could not read suffix file: ${error}`);
+}
 
 // Generate the version tag
 const versionTag = `SNAPSHOT150-${currentYear}.${currentWeek}${releaseLetter}${totalReleases}exp`;
