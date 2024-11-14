@@ -51,26 +51,53 @@ execSync('git add .');
 execSync('git commit -m "(Extremely unstable) A snapshot of the newest update in the works"');
 execSync('git push origin unstable');
 
-// Step 4: Create the version tag based on your format
+// Function to get all tags
+const getTags = () => {
+  const tags = execSync('git tag --list').toString().split('\n').filter(Boolean);
+  return tags;
+};
 
-// Get the current year (two digits)
+// Function to count the number of tags in the current week
+const countWeeklyReleases = (tags) => {
+  const currentWeek = moment().isoWeek(); // Get current ISO week number
+  return tags.filter(tag => {
+    const tagDate = moment(tag, 'SNAPSHOTYYYY-Www-a'); // Parse the date part of the tag
+    return tagDate.isoWeek() === currentWeek; // Check if the tag is in the current week
+  }).length;
+};
+
+// Function to count the total number of releases (tags)
+const countTotalReleases = (tags) => {
+  return tags.length;
+};
+
+// Get current year and week
 const currentYear = moment().year().toString().slice(-2);
+const currentWeek = moment().isoWeek();
 
-// Get the current week of the year (1-52)
-const currentWeek = moment().week();
+// Get the tags from git
+const tags = getTags();
 
-// Step 5: Count the number of tags in the current week
-const tagsThisWeek = execSync(`git tag --list 'SNAPSHOT150-${currentYear}.${currentWeek}*'`).toString().split('\n').filter(Boolean).length;
-const releaseLetterThisWeek = String.fromCharCode(97 + tagsThisWeek);  // Convert number to letter ('a' = 1, 'b' = 2, etc.)
+// Count the weekly releases and total releases
+const weeklyReleases = countWeeklyReleases(tags);
+const totalReleases = countTotalReleases(tags);
 
-// Step 6: Count the total number of tags (total releases)
-const totalTags = execSync('git tag --list "SNAPSHOT150*"').toString().split('\n').filter(Boolean).length;
+// Generate the release letter for this week (a, b, c, etc.)
+const releaseLetter = String.fromCharCode(97 + weeklyReleases); // 'a' is 97 in ASCII
 
-// Combine the components into the desired format
-const versionTag = `SNAPSHOT150-${currentYear}.${currentWeek}${releaseLetterThisWeek}${totalTags}exp`;
+// Generate the version tag
+const versionTag = `SNAPSHOT${currentYear}-${currentWeek}-${releaseLetter}${totalReleases}exp`;
 
-// Create the tag and push it
+// Output the result for review
+console.log(`Generated version tag: ${versionTag}`);
+
+// Add, commit, and push the changes
+execSync('git add .');
+execSync('git commit -m "Automated release"');
+execSync(`git push origin unstable`);
+
+// Create a new Git tag and push it
 execSync(`git tag ${versionTag}`);
 execSync(`git push origin ${versionTag}`);
 
-console.log(`Pushed new version tag: ${versionTag}`);
+console.log('Release pushed with tag:', versionTag);
