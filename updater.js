@@ -91,7 +91,7 @@ try {
 }
 
 // Generate the version tag
-const versionTag = `SNAPSHOT150-${currentYear}.${currentWeek}${releaseLetter}${totalReleases}exp`;
+const versionTag = `SNAPSHOT150-${currentYear}.${currentWeek}${releaseLetter}${totalReleases}${versionSuffix}`;
 
 // Output the result for review
 console.log(`Generated version tag: ${versionTag}`);
