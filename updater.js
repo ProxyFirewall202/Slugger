@@ -54,10 +54,17 @@ const getTags = () => {
 
 // Function to count the number of tags in the current week
 const countWeeklyReleases = (tags) => {
+  const currentYear = moment().year().toString().slice(-2); // Get current two-digit year
   const currentWeek = moment().isoWeek(); // Get current ISO week number
+
   return tags.filter(tag => {
-    const tagDate = moment(tag, 'SNAPSHOTYYYY-Www-a'); // Parse the date part of the tag
-    return tagDate.isoWeek() === currentWeek; // Check if the tag is in the current week
+    // Match the tag format: "SNAPSHOT150-YY.WWLetter"
+    const match = tag.match(/^SNAPSHOT150-(\d{2})\.(\d{2})[a-zA-Z]/);
+    if (match) {
+      const [_, tagYear, tagWeek] = match; // Extract year and week
+      return tagYear === currentYear && parseInt(tagWeek) === currentWeek;
+    }
+    return false; // Skip tags that don't match the expected format
   }).length;
 };
 
