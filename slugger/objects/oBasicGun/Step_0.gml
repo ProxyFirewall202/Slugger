@@ -1,5 +1,11 @@
 _tick ++;
 
+
+
+//This is a really cool test for github source control thingo I just wanna see how it works
+
+
+
 //Manage gun
 x = global._slug_instance.x;
 y = global._slug_instance.y;
