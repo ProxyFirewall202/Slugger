@@ -1,0 +1,11 @@
+global._distort_count ++;
+angle = 0;
+_angle_state = -30;
+_rad_state = 0;
+_my_id = global._distort_count;
+layer_create(_my_id + layer_get_depth("Instances"), string(_my_id));
+_distort_info = fx_create("_filter_twirl_distort");
+fx_set_parameter(_distort_info, "g_DistortAngle", angle);
+fx_set_parameter(_distort_info, "g_DistortRadius", radius);
+fx_set_parameter(_distort_info, "g_DistortOffset", [(xposition / room_width) - 0.5, (yposition / room_height) - 0.5]);
+layer_set_fx(string(_my_id), _distort_info);

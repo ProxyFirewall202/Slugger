@@ -1,0 +1,9 @@
+_my_id = real(global._current_enemy_id);
+run_only = 1;
+_setup = false;
+_my_health = mhealth;
+_last_health = mhealth + 1;
+_my_damage = damage;
+_dmg_cooldown = 40;
+_tick = -1;
+_last_update = 0

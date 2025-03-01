@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scEnumFindKey",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scEnumFindKey",
+  "parent":{
+    "name":"Convinience",
+    "path":"folders/Scripts/Convinience.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
