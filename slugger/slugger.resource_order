@@ -21,6 +21,7 @@
   "ResourceOrderSettings":[
     {"name":"oBasicGun","order":2,"path":"objects/oBasicGun/oBasicGun.yy",},
     {"name":"oBasicGunBullet","order":3,"path":"objects/oBasicGunBullet/oBasicGunBullet.yy",},
+    {"name":"Object15","order":14,"path":"objects/Object15/Object15.yy",},
     {"name":"oDistortionEffect","order":11,"path":"objects/oDistortionEffect/oDistortionEffect.yy",},
     {"name":"oE1T1","order":9,"path":"objects/oE1T1/oE1T1.yy",},
     {"name":"oEnemyManager","order":4,"path":"objects/oEnemyManager/oEnemyManager.yy",},
@@ -41,6 +42,7 @@
     {"name":"sBasicGunBullet","order":3,"path":"sprites/sBasicGunBullet/sBasicGunBullet.yy",},
     {"name":"sBlank","order":10,"path":"sprites/sBlank/sBlank.yy",},
     {"name":"sDefaultBG","order":4,"path":"sprites/sDefaultBG/sDefaultBG.yy",},
+    {"name":"sH1","order":42,"path":"sprites/sH1/sH1.yy",},
     {"name":"sHealthBarMain","order":1,"path":"sprites/sHealthBarMain/sHealthBarMain.yy",},
     {"name":"sPartE1Remains","order":3,"path":"sprites/sPartE1Remains/sPartE1Remains.yy",},
     {"name":"sPartShockwaveOuter","order":2,"path":"sprites/sPartShockwaveOuter/sPartShockwaveOuter.yy",},
