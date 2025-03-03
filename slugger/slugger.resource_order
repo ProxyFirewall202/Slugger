@@ -21,12 +21,12 @@
   "ResourceOrderSettings":[
     {"name":"oBasicGun","order":2,"path":"objects/oBasicGun/oBasicGun.yy",},
     {"name":"oBasicGunBullet","order":3,"path":"objects/oBasicGunBullet/oBasicGunBullet.yy",},
-    {"name":"Object15","order":14,"path":"objects/Object15/Object15.yy",},
     {"name":"oDistortionEffect","order":11,"path":"objects/oDistortionEffect/oDistortionEffect.yy",},
     {"name":"oE1T1","order":9,"path":"objects/oE1T1/oE1T1.yy",},
     {"name":"oEnemyManager","order":4,"path":"objects/oEnemyManager/oEnemyManager.yy",},
     {"name":"oEnemyRemains","order":10,"path":"objects/oEnemyRemains/oEnemyRemains.yy",},
     {"name":"oEntityManager","order":7,"path":"objects/oEntityManager/oEntityManager.yy",},
+    {"name":"oH1","order":14,"path":"objects/oH1/oH1.yy",},
     {"name":"oHealthBar","order":12,"path":"objects/oHealthBar/oHealthBar.yy",},
     {"name":"oMAIN","order":1,"path":"objects/oMAIN/oMAIN.yy",},
     {"name":"oRunController","order":6,"path":"objects/oRunController/oRunController.yy",},
