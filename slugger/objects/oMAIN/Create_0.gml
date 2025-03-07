@@ -35,4 +35,13 @@ layer_set_fx("ScreenShake", global._screenshake_info);
 
 
 global.EnemyWS = ds_map_create();
-ds_map_add(global.EnemyWS, oE1T1, 2);
+ds_map_add(global.EnemyWS, "oE1T1", 2);
+ds_map_add(global.EnemyWS, "oE1T4", 10);
+
+global.EnemyH = ds_map_create();
+ds_map_add(global.EnemyH, "oE1T1", 10);
+ds_map_add(global.EnemyH, "oE1T4", 100);
+
+global.EnemyD = ds_map_create();
+ds_map_add(global.EnemyD, "oE1T1", 10);
+ds_map_add(global.EnemyD, "oE1T4", 40);

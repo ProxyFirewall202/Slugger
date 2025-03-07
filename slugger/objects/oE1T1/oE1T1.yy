@@ -36,8 +36,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"sH1",
-    "path":"sprites/sH1/sH1.yy",
+    "name":"sPlaceholderEnemy",
+    "path":"sprites/sPlaceholderEnemy/sPlaceholderEnemy.yy",
   },
   "spriteMaskId":null,
   "visible":true,

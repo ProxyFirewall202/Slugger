@@ -6,8 +6,8 @@ if (x < 0 || x > room_width || y < 0 || y > room_height) {
     instance_destroy();
 }
 
-if place_meeting(x, y, oE1T1) {
-	var _instance = instance_nearest(x, y, oE1T1);
+if (place_meeting(x, y, oEnemyManager)) {
+	var _instance = instance_nearest(x, y, oEnemyManager);
 	if _instance._state == 1 {
         
 		//Screen shake

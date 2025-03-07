@@ -16,7 +16,7 @@ if global._tick < global._last_enemy_killed + 200 {
     array_push(global._dmg_dis_queue, _dmg_dis_data);
 }
 global._last_enemy_killed = global._tick;
-repeat(irandom(ds_map_find_value(global.EnemyWS, object_index)) + global._combo) {
+repeat(irandom(ds_map_find_value(global.EnemyWS, string(object_get_name(object_index)))) + global._combo) {
 	instance_create_layer(x + random_range(-20, 20), y + random_range(-20, 20), "Collectables", oWarpedSoul);
 }
 part_emitter_region(global.p_system, global.EShockwaveInnerEmitter, x, x, y, y, ps_shape_rectangle, ps_distr_linear);

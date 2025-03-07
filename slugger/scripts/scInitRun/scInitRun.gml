@@ -69,4 +69,7 @@ function scInitRun(){
     } else {
         ds_map_add(global._single_instances, "runcontroller", instance_create_layer(x, y, "HUD", oRunController));
     }
+	
+	//Spawn Hivox
+	array_push(global._entity_spawns, 4);
 }

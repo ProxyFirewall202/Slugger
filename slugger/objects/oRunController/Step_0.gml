@@ -1,11 +1,5 @@
 if global._run_state == 1 {
 	//Enemies
-	if irandom(60) == 0 {
-		if global._current_enemy_id > -1 {
-			//Spawn Enemy
-			array_push(global._entity_spawns, 1);
-		}
-	}
 	
 	//Combo
 	if global._tick >= global._last_enemy_killed + 60 global._combo = 0;
