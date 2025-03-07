@@ -71,5 +71,10 @@ function scInitRun(){
     }
 	
 	//Spawn Hivox
-	array_push(global._entity_spawns, 4);
+	var _data = {
+		etype : 4,
+		xpos : room_width / 2,
+		ypos : room_height / 2
+	};
+	array_push(global._entity_spawns, _data);
 }

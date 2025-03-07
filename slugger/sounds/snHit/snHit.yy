@@ -21,5 +21,5 @@
   "sampleRate":48000,
   "soundFile":"snHit.mp3",
   "type":1,
-  "volume":0.7,
+  "volume":0.5,
 }

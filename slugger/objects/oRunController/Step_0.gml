@@ -1,6 +1,4 @@
 if global._run_state == 1 {
-	//Enemies
-	
 	//Combo
 	if global._tick >= global._last_enemy_killed + 60 global._combo = 0;
 	

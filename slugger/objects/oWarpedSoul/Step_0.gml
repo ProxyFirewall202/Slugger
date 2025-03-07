@@ -26,5 +26,7 @@ if (_tick < 60 && _vel > 0 && !(x < 10 || x > room_width - 10 || y < 10 || y > r
 
 if place_meeting(x, y, oSlug) {
 	global._warped_souls ++;
+	audio_sound_pitch(snWarpedSoul, random_range(0.8, 1.2));
+	audio_play_sound(snWarpedSoul, 1, false);
 	instance_destroy();
 }

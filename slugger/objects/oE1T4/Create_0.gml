@@ -6,9 +6,12 @@ part_emitter_burst(global.p_system, global.E1Death1Emitter, global.E1Death1Type,
 image_speed = 1;
 image_index = 120;
 _state = 0;
+_spawning = false;
 _step = 0;
 _death_step = "NA";
 _spawn_step = 0;
 _hit = 0;
 _last_hit = 0
 _state3_pushed = false;
+_data = 0;
+_spawn_effect_idx = 0;
