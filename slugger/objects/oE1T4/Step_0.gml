@@ -7,14 +7,14 @@ if (_spawning) {
 		array_push(global._entity_spawns, _data);
 		
 		
-		/*repeat(irandom(5)) {
+		repeat(irandom(10)) {
 			var _data_ignore = {
 				etype : 1,
 				xpos : irandom(room_width),
 				ypos : irandom(room_height)
 			};
 			array_push(global._entity_spawns, _data_ignore);
-		}*/
+		}
 		_state3_pushed = true;
 	}
 		if (image_index > 119) {
@@ -25,7 +25,7 @@ if (_spawning) {
 
 if _state == 1 {
     event_inherited();
-    if irandom(10) == 0 {
+    if irandom(60) == 0 {
 		if (global._current_enemy_id > -1 && _spawning == false) {
 			_spawning = true;
 			image_index = 60
