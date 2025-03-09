@@ -78,6 +78,7 @@
     {"id":{"name":"sPartShockwaveOuter","path":"sprites/sPartShockwaveOuter/sPartShockwaveOuter.yy",},},
     {"id":{"name":"sPartSlugMove","path":"sprites/sPartSlugMove/sPartSlugMove.yy",},},
     {"id":{"name":"sPlaceholderEnemy","path":"sprites/sPlaceholderEnemy/sPlaceholderEnemy.yy",},},
+    {"id":{"name":"Sprite17","path":"sprites/Sprite17/Sprite17.yy",},},
     {"id":{"name":"sSlug","path":"sprites/sSlug/sSlug.yy",},},
     {"id":{"name":"sW1BG","path":"sprites/sW1BG/sW1BG.yy",},},
     {"id":{"name":"sWarpedSoul","path":"sprites/sWarpedSoul/sWarpedSoul.yy",},},

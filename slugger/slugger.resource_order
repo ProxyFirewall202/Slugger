@@ -51,6 +51,7 @@
     {"name":"sPartShockwaveOuter","order":2,"path":"sprites/sPartShockwaveOuter/sPartShockwaveOuter.yy",},
     {"name":"sPartSlugMove","order":1,"path":"sprites/sPartSlugMove/sPartSlugMove.yy",},
     {"name":"sPlaceholderEnemy","order":40,"path":"sprites/sPlaceholderEnemy/sPlaceholderEnemy.yy",},
+    {"name":"Sprite17","order":44,"path":"sprites/Sprite17/Sprite17.yy",},
     {"name":"sW1BG","order":1,"path":"sprites/sW1BG/sW1BG.yy",},
     {"name":"sWarpedSoul","order":41,"path":"sprites/sWarpedSoul/sWarpedSoul.yy",},
   ],
