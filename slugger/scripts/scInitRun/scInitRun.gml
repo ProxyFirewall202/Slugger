@@ -62,7 +62,7 @@ function scInitRun(){
     } else {
         ds_map_add(global._single_instances, "weaponmanager", instance_create_layer(x, y, "Instances", oWeaponManager));
     }
-            
+    
     // Create run controller
     if (ds_map_exists(global._single_instances, "runcontroller")) {
         ds_map_replace(global._single_instances, "runcontroller", instance_create_layer(x, y, "HUD", oRunController));

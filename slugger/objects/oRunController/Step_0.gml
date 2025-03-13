@@ -5,6 +5,9 @@ if global._run_state == 1 {
 	//Background Particles
 	if (irandom(10) == 0) part_emitter_burst(global.p_system, global.W1ParticleEmitter, global.W1ParticleType, 1);
     
+	//Create powerup
+	if (irandom(60) == 0) instance_create_layer(random(room_width), random(room_height), "Collectables", oDmgT1);
+	
     //Damage display
     if array_length(global._dmg_dis_queue) > 0 {
         var _info;
