@@ -1,1 +1,0 @@
-draw_sprite_ext(sDmgT1, image_index, x, y, 0.2, 0.2, 0, c_white, 1);
