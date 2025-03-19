@@ -38,6 +38,38 @@ if place_meeting(x, y, oSlug) && (_dmg_cooldown == 0) {
 		damage_percent : _dmg_percent
     };
     array_push(global._dmg_dis_queue, _dmg_dis_data);
+	
+	//Enemy being damaged
+	
+	_last_hit = _step;
+	_hit = 1;
+		
+	var _my_rdamage = 2;
+    _dmg = 0;
+    var _crit;
+    _dmg = _my_rdamage + random_range(-(_my_rdamage / 4), _my_rdamage / 4);
+    _crit = 0;
+    _dmg_dis_data = {
+        xpos : x,
+        ypos : y,
+        damage : _dmg,
+        basedamage : _my_rdamage,
+        crit : _crit,
+		damage_type : 0
+    };
+        
+		
+	_min_damage = 1.5;
+	_max_damage = 2.5;
+	_range = _max_damage - _min_damage;
+	_relative_damage = _dmg - _min_damage;
+	_dmg_percent = _relative_damage / _range;
+		
+		
+	array_push(global._dmg_dis_queue, _dmg_dis_data);
+	audio_sound_pitch(snHit, lerp(0.98, 1.02, _dmg_percent));
+	audio_play_sound(snHit, 1, false);
+    _my_health -= _dmg;
 }
 
 var _data = ds_map_find_value(global._enemies, _my_id);

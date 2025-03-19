@@ -21,6 +21,7 @@
   "ResourceOrderSettings":[
     {"name":"oBasicGun","order":2,"path":"objects/oBasicGun/oBasicGun.yy",},
     {"name":"oBasicGunBullet","order":3,"path":"objects/oBasicGunBullet/oBasicGunBullet.yy",},
+    {"name":"Object18","order":17,"path":"objects/Object18/Object18.yy",},
     {"name":"oDistortionEffect","order":11,"path":"objects/oDistortionEffect/oDistortionEffect.yy",},
     {"name":"oDmgT1","order":15,"path":"objects/oDmgT1/oDmgT1.yy",},
     {"name":"oE1T1","order":9,"path":"objects/oE1T1/oE1T1.yy",},
@@ -39,6 +40,7 @@
     {"name":"scInitRun","order":1,"path":"scripts/scInitRun/scInitRun.yy",},
     {"name":"snHit","order":1,"path":"sounds/snHit/snHit.yy",},
     {"name":"snLargeDeath","order":4,"path":"sounds/snLargeDeath/snLargeDeath.yy",},
+    {"name":"snPowerupCollect","order":6,"path":"sounds/snPowerupCollect/snPowerupCollect.yy",},
     {"name":"snSlugDamage","order":3,"path":"sounds/snSlugDamage/snSlugDamage.yy",},
     {"name":"snSmallDeath","order":2,"path":"sounds/snSmallDeath/snSmallDeath.yy",},
     {"name":"snWarpedSoul","order":5,"path":"sounds/snWarpedSoul/snWarpedSoul.yy",},
