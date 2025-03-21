@@ -6,7 +6,11 @@ if global._run_state == 1 {
 	if (irandom(10) == 0) part_emitter_burst(global.p_system, global.W1ParticleEmitter, global.W1ParticleType, 1);
     
 	//Create powerup
-	if (irandom(60) == 0) instance_create_layer(random(room_width), random(room_height), "Collectables", oDmgT1);
+	var _id_struct = {
+		_id : 1
+	};
+	if (irandom(60) == 0) instance_create_layer(random(room_width), random(room_height), "Collectables", oDmgT1, _id_struct);
+	show_debug_message(ds_map_find_value(global._powerups, 1));
 	
     //Damage display
     if array_length(global._dmg_dis_queue) > 0 {

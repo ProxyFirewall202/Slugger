@@ -27,6 +27,7 @@ if (place_meeting(x, y, oEnemyManager)) {
             _dmg = _my_damage + random_range(-(_my_damage / 4), _my_damage / 4);
             _crit = 0;
         }
+		if (ds_map_exists(global._powerups, 1)) _dmg = _dmg + ((_dmg / 4) * ds_map_find_value(global._powerups, 1));
         var _dmg_dis_data = {
             xpos : x,
             ypos : y,
@@ -45,7 +46,7 @@ if (place_meeting(x, y, oEnemyManager)) {
 		
 		
 		array_push(global._dmg_dis_queue, _dmg_dis_data);
-		audio_sound_pitch(snHit, lerp(0.98, 1.02, _dmg_percent));
+		audio_sound_pitch(snHit, lerp(0.9, 2.0, global._combo / 10));
 		audio_play_sound(snHit, 1, false);
         _instance._my_health -= _dmg;
     }

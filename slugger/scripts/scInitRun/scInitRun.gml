@@ -25,6 +25,10 @@ function scInitRun(){
     global._dmg_dis_queue = [];
     
     
+	//Initialise powerup counters
+	global._powerups = ds_map_create();
+	global._powerup_names = ds_map_create();
+	ds_map_add(global._powerup_names, 1, "DmgT1");
     
     //Create all instances
     // Create W1BG
