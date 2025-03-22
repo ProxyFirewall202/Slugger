@@ -1,16 +1,55 @@
+_tick ++;
 if global._run_state == 1 {
 	//Combo
-	if global._tick >= global._last_enemy_killed + 60 global._combo = 0;
+	if (global._tick >= global._last_enemy_killed + 60) {
+		global._combo = 0;
+		audio_stop_sound(snComboRiser);
+		audio_stop_sound(snComboRiser2);
+	}
+	if (global._combo > 4 && !audio_is_playing(snComboRiser)) {
+		audio_play_sound(snComboRiser, 1, false);
+		audio_play_sound(snComboRiser2, 1, false);
+	}
 	
 	//Background Particles
 	if (irandom(10) == 0) part_emitter_burst(global.p_system, global.W1ParticleEmitter, global.W1ParticleType, 1);
     
+	
+	//Health increase check
+	if (global._slug_health != _last_health) {
+		if (global._slug_health > _last_health) {
+			part_emitter_region(global.p_system, global.HealthPartEmitter, oSlug.x - 20, oSlug.x + 20, oSlug.y - 20, oSlug.y + 20, ps_shape_rectangle, ps_distr_linear);
+			part_emitter_burst(global.p_system, global.HealthPartEmitter, global.HealthPartType, global._slug_health - _last_health);
+		}
+		_last_health = global._slug_health;
+	}
+	
 	//Create powerup
-	var _id_struct = {
-		_id : 1
-	};
-	if (irandom(60) == 0) instance_create_layer(random(room_width), random(room_height), "Collectables", oDmgT1, _id_struct);
-	show_debug_message(ds_map_find_value(global._powerups, 1));
+	if (irandom(1000) == 0) {
+		
+		var _id_struct = {
+			_id : 1
+		};
+		
+		instance_create_layer(random(room_width), random(room_height), "Collectables", oDmgT1, _id_struct);
+	}
+	
+	
+	if (irandom(500) == 0) {
+		
+		var _id_struct = {
+			_id : 2
+		};
+		
+		instance_create_layer(random(room_width), random(room_height), "Collectables", oHealthP, _id_struct);
+	}
+	
+	
+	//Damage boost particles
+	if (ds_map_exists(global._powerups, 1) && _tick mod 5 == 0) {
+		part_emitter_region(global.p_system, global.DamagePartEmitter, oSlug.x - 20, oSlug.x + 20, oSlug.y - 20, oSlug.y + 20, ps_shape_rectangle, ps_distr_linear);
+		part_emitter_burst(global.p_system, global.DamagePartEmitter, global.DamagePartType, ds_map_find_value(global._powerups, 1));
+	}
 	
     //Damage display
     if array_length(global._dmg_dis_queue) > 0 {

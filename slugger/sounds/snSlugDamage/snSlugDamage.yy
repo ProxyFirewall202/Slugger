@@ -9,7 +9,7 @@
   "bitRate":512,
   "compression":0,
   "conversionMode":0,
-  "duration":15.912,
+  "duration":2.0,
   "name":"snSlugDamage",
   "parent":{
     "name":"Sounds",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":48000,
-  "soundFile":"snSlugDamage.mp3",
+  "soundFile":"snSlugDamage.wav",
   "type":1,
   "volume":1.0,
 }

@@ -19,8 +19,8 @@ if (visible == true) {
 			part_emitter_region(global.p_system, global.PowerupCollectEmitter, x - 20, x + 20, y - 20, y + 20, ps_shape_rectangle, ps_distr_linear);
 			part_emitter_burst(global.p_system, global.PowerupCollectEmitter, global.PowerupCollectType, 40);
 			
-			
-			
+			if (_id == 2) global._slug_health += 40;
+			if (global._slug_health > global._max_slug_health) global._slug_health = global._max_slug_health;
 		}
 		if (image_index > 60) {
 			image_index = 0;

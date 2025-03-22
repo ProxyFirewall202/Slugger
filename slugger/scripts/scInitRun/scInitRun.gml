@@ -4,7 +4,8 @@ function scInitRun(){
     global._wave = 1;
     
     //Reset
-	global._slug_health = 100;
+	global._max_slug_health = 100;
+	global._slug_health = global._max_slug_health;
 	if variable_global_exists("_enemies") ds_map_clear(global._enemies);
 	
     //Manage weapons
@@ -29,6 +30,7 @@ function scInitRun(){
 	global._powerups = ds_map_create();
 	global._powerup_names = ds_map_create();
 	ds_map_add(global._powerup_names, 1, "DmgT1");
+	ds_map_add(global._powerup_names, 2, "HealthP");
     
     //Create all instances
     // Create W1BG

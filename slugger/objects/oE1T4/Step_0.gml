@@ -5,6 +5,8 @@ if (_spawning) {
 	
 	if (image_index > 88 && _state3_pushed == false) {
 		array_push(global._entity_spawns, _data);
+		audio_sound_pitch(snEnemySpawn, random_range(0.9, 1.1));
+		audio_play_sound(snEnemySpawn, 1, false);
 		
 		
 		repeat(irandom(10)) {
@@ -25,7 +27,7 @@ if (_spawning) {
 
 if _state == 1 {
     event_inherited();
-    if irandom(60) == 0 {
+    if irandom(200) == 0 {
 		if (global._current_enemy_id > -1 && _spawning == false) {
 			_spawning = true;
 			image_index = 60

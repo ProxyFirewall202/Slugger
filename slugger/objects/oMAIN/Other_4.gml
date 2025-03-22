@@ -102,4 +102,40 @@ _pemit1 = part_emitter_create(_ps);
 
 global.SlugMoveType = _ptype1;
 global.SlugMoveEmitter = _pemit1;
+
+//HealthParticle
+var _ptype10 = part_type_create();
+part_type_sprite(_ptype10, sPartHealth, false, true, false)
+part_type_size(_ptype10, 0.3, 1, 0, 0.1);
+part_type_scale(_ptype10, 0.01, 0.01);
+part_type_speed(_ptype10, 1, 5, -0.01, 0);
+part_type_direction(_ptype10, 1, 360, 0, 5);
+part_type_gravity(_ptype10, 0, 270);
+part_type_orientation(_ptype10, 0, 0, 0, 0, false);
+part_type_colour3(_ptype10, $FFFFFF, $FFFFFF, $FFFFFF);
+part_type_alpha3(_ptype10, 1, 1, 0);
+part_type_blend(_ptype10, false);
+part_type_life(_ptype10, 140, 250);
+
+var _pemit10 = part_emitter_create(_ps);
+global.HealthPartType = _ptype10;
+global.HealthPartEmitter = _pemit10;
+
+//DamageParticle
+_ptype10 = part_type_create();
+part_type_sprite(_ptype10, sPartDamage, false, true, false)
+part_type_size(_ptype10, 0.3, 1, 0, 0.1);
+part_type_scale(_ptype10, 0.05, 0.05);
+part_type_speed(_ptype10, 1, 5, -0.01, 0);
+part_type_direction(_ptype10, 1, 360, 0, 5);
+part_type_gravity(_ptype10, 0, 270);
+part_type_orientation(_ptype10, 0, 0, 5, 0, false);
+part_type_colour3(_ptype10, $FFFFFF, $FFFFFF, $FFFFFF);
+part_type_alpha3(_ptype10, 1, 1, 0);
+part_type_blend(_ptype10, false);
+part_type_life(_ptype10, 140, 250);
+
+_pemit10 = part_emitter_create(_ps);
+global.DamagePartType = _ptype10;
+global.DamagePartEmitter = _pemit10;
 global.p_system = _ps;
