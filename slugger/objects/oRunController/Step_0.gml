@@ -11,6 +11,33 @@ if global._run_state == 1 {
 		audio_play_sound(snComboRiser2, 1, false);
 	}
 	
+	//Element check
+	if (_tick > _element_last_change_frame && _element_key_unpressed == false) {
+		if (!keyboard_check(ord("C")) && !keyboard_check(ord("Z"))) _element_key_unpressed = true
+	}
+	
+	
+	
+	if (keyboard_check(ord("C")) && _element_key_unpressed == true) {
+		if (global._current_element < array_length(global._elements)) {
+			global._current_element ++;
+		} else {
+			global._current_element = 0;
+		}
+	_element_last_change_frame = _tick;
+	_element_key_unpressed = false;
+	}
+	
+	if (keyboard_check(ord("Z")) && _element_key_unpressed == true) {
+		if (global._current_element > 0) {
+			global._current_element --;
+		} else {
+			global._current_element = array_length(global._elements);
+		}
+	_element_last_change_frame = _tick;
+	_element_key_unpressed = false;
+	}
+	
 	//Background Particles
 	if (irandom(10) == 0) part_emitter_burst(global.p_system, global.W1ParticleEmitter, global.W1ParticleType, 1);
     
@@ -35,7 +62,7 @@ if global._run_state == 1 {
 	}
 	
 	
-	if (irandom(500) == 0) {
+	if (irandom(500) == 0 && global._slug_health < global._slug_max_health) {
 		
 		var _id_struct = {
 			_id : 2

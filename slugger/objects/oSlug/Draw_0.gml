@@ -1,4 +1,9 @@
+var _vel = abs(_xvel) + abs(_yvel);
+var _col = clamp(lerp(0, 255, _vel / 5), 0, 255);
+if (_vel > 1) gpu_set_fog(true, make_color_rgb(_col, _col, _col), 0, 0);
 draw_self();
 draw_text(room_width / 2, 45, "HP: " + string(global._slug_health));
 draw_text(room_width / 2 + 100, 45, "WS: " + string(global._warped_souls));
 draw_text(room_width / 2 + 200, 45, "Combo: " + string(global._combo));
+draw_text(room_width / 2, 80, "Element: " + string(global._current_element));
+gpu_set_fog(false, make_color_rgb(_col, _col, _col), 0, 0);

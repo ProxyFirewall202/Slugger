@@ -23,6 +23,17 @@ global._single_instances = ds_map_create();
 global._wave = 0;
 
 global._current_weapon = "NA";
+global._current_element = 0;
+global._elements = [];
+global._element_colours = {
+	"c0" : [255, 255, 255],
+	"c1" : [255, 0, 0],
+	"c2" : [255, 100, 100],
+	"c3" : [255, 100, 100],
+	"c4" : [255, 100, 100],
+	"c5" : [255, 100, 100],
+	"c6" : [255, 100, 100]
+}
 
 
 global._scrshake = {

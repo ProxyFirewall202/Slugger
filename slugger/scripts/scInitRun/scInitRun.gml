@@ -21,7 +21,11 @@ function scInitRun(){
 	global._bonus_warp = 0;
 	global._last_enemy_killed = 0;
 	global._combo = 0;
-    
+	
+	//Manage elements
+	global._elements = ["sl", "f", "i", "v", "s", "sm"];
+    global._current_element = 0;
+	
     //Initialise damage display queue
     global._dmg_dis_queue = [];
     

@@ -22,6 +22,7 @@ if (_spawning) {
 		if (image_index > 119) {
 			_spawning = false;
 			image_index = 0;
+			image_angle = 0;
 		}
 }
 
@@ -53,6 +54,15 @@ if _state == 1 {
         _state = 1;
         _spawn_step = _step;
         image_index = 0;
+		
+		_spawning = true;
+			image_index = 60
+			_state3_pushed = false
+			_data = {
+				etype : 1,
+				xpos : irandom(room_width),
+				ypos : irandom(room_height)
+			};
     }
 } else if _state == 2{
     //if (_step == _death_step + 10 && fps > 58) scDistortion(x, y, random(0.5));

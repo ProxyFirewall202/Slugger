@@ -1,15 +1,20 @@
 _tick ++;
-if (visible == true) {
+if (_despawning) {
+	image_alpha -= 0.017
+	if image_alpha < 0.03 instance_destroy();
+} else if (visible == true) {
 	if (image_index < 62) {
 		if (place_meeting(x, y, oSlug)) {
 			_collect_tick = _tick;
 			visible = false;
-			if ds_map_exists(global._powerups, _id) {
-				ds_map_replace(global._powerups, _id, ds_map_find_value(global._powerups, _id) + 1);
-				audio_sound_pitch(snPowerupCollect, 1 + (ds_map_find_value(global._powerups, _id) / 50));
-			} else {
-				ds_map_add(global._powerups, _id, 1);
-				audio_sound_pitch(snPowerupCollect, 1);
+			if (_id == 1) {
+				if ds_map_exists(global._powerups, _id) {
+					ds_map_replace(global._powerups, _id, ds_map_find_value(global._powerups, _id) + 1);
+					audio_sound_pitch(snPowerupCollect, 1 + (ds_map_find_value(global._powerups, _id) / 50));
+				} else {
+					ds_map_add(global._powerups, _id, 1);
+					audio_sound_pitch(snPowerupCollect, 1);
+				}
 			}
 			audio_play_sound(snPowerupCollect, 1, false);
 			
@@ -21,10 +26,17 @@ if (visible == true) {
 			
 			if (_id == 2) global._slug_health += 40;
 			if (global._slug_health > global._max_slug_health) global._slug_health = global._max_slug_health;
+			
+			if (_id == 2) instance_destroy();
+			
 		}
 		if (image_index > 60) {
 			image_index = 0;
 		}
+		
+		if (_tick > 300) _despawning = true;
+		if (_id == 2 && global._slug_health == global._max_slug_health) _despawning = true;
+		
 	}
 
 	if (image_index > 61) {
@@ -33,7 +45,7 @@ if (visible == true) {
 		}
 	}
 } else {
-	if (_tick > _collect_tick + 450) {
+	if (_tick > _collect_tick + 450 && _id == 1) {
 		if (ds_map_find_value(global._powerups, _id) == 1) {
 			ds_map_delete(global._powerups, _id);
 		} else {
