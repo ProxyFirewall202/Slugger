@@ -3,8 +3,8 @@ _step ++;
 if _state == 1 {
     event_inherited();
     direction = point_direction(x, y, global._slug_instance.x, global._slug_instance.y);
-    x += lengthdir_x(1, direction);
-    y += lengthdir_y(1, direction);
+    x += lengthdir_x(1, direction) * delta;
+    y += lengthdir_y(1, direction) * delta;
 
     if _my_health < 1 {
         _state = 2;

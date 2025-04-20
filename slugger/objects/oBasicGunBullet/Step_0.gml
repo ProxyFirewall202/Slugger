@@ -1,7 +1,7 @@
 _tick ++;
-x += lengthdir_x(_vel, direction);
-y += lengthdir_y(_vel, direction);
-_vel ++;
+x += lengthdir_x(_vel, direction) * delta;
+y += lengthdir_y(_vel, direction) * delta;
+_vel += delta;
 if (x < 0 || x > room_width || y < 0 || y > room_height) {
     instance_destroy();
 }

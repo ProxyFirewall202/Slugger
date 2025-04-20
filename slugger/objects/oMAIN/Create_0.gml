@@ -8,7 +8,10 @@ window_center();
 
 audio_channel_num(128);
 
-game_set_speed(60, gamespeed_fps);
+game_set_speed(25, gamespeed_fps);
+
+global._delta_factor = 1;
+#macro delta global._delta_factor
 
 display_reset(0, false);
 

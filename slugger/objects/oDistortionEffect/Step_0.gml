@@ -1,10 +1,10 @@
-radius += (_rad_state - radius) * 0.01;
+radius += (_rad_state - radius) * 0.01 * delta;
 if radius <= 0 {
 	layer_destroy(string(_my_id));
 	global._distort_count --;
 	instance_destroy();
 }
-angle += (_angle_state - angle) * 0.05;
+angle += (_angle_state - angle) * 0.05 * delta;
 if (angle == _angle_state) {
 	_angle_state = -_angle_state;
 }

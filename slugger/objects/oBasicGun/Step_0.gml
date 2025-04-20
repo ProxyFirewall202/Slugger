@@ -17,7 +17,7 @@ direction += 90;
 x += lengthdir_x(10 + 5 * _shooting, direction);
 y += lengthdir_y(10 + 5 * _shooting, direction);
 
-if (mouse_check_button(mb_left)) && (global._current_weapon_cooldown == 0) {
+if (mouse_check_button(mb_left)) && (global._current_weapon_cooldown < 1) {
 	//Animate
 	_shooting = 1;
 	_shoot_tick = _tick;
@@ -45,10 +45,10 @@ if (mouse_check_button(mb_left)) && (global._current_weapon_cooldown == 0) {
 	
 	//Clean up
 	_bullet_next_id++;
-	global._current_weapon_cooldown = global._weapon_cooldown
+	global._current_weapon_cooldown = global._weapon_cooldown;
 } else {
 	if global._current_weapon_cooldown > 0 {
-		global._current_weapon_cooldown --;
+		global._current_weapon_cooldown -= delta;
 	}
 }
 

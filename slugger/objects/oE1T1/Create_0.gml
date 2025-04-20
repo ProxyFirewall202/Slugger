@@ -8,4 +8,4 @@ _step = 0;
 _death_step = "NA";
 _spawn_step = 0;
 _hit = 0;
-_last_hit = 0;
+_last_hit = 0 ;
