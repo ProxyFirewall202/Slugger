@@ -1,4 +1,4 @@
-_step ++;
+_step += delta;
 
 if (_spawning) {
 	image_angle = point_direction(room_width / 2, room_height / 2, _data.xpos, _data.ypos) - 90;
@@ -27,8 +27,10 @@ if (_spawning) {
 }
 
 if _state == 1 {
-    event_inherited();
-    if irandom(200) == 0 {
+    image_index += round(delta);
+	event_inherited();
+    var _spawn_rate = delta / 201;
+	if (random(1) < _spawn_rate) {
 		if (global._current_enemy_id > -1 && _spawning == false) {
 			_spawning = true;
 			image_index = 60
@@ -47,13 +49,13 @@ if _state == 1 {
         _state = 2;
 		_spawning = false;
 		image_index = 180;
-        _death_step = real(_step);
+        _death_step = _step;
     }
 } else if _state == 0 {
-    if image_index > 179 {
+    image_index += round(delta);
+	if image_index > 179 {
         _state = 1;
         _spawn_step = _step;
-        image_index = 0;
 		
 		_spawning = true;
 			image_index = 60
@@ -64,9 +66,10 @@ if _state == 1 {
 				ypos : irandom(room_height)
 			};
     }
-} else if _state == 2{
-    //if (_step == _death_step + 10 && fps > 58) scDistortion(x, y, random(0.5));
-	if _step == _death_step + 25 {
+} else if _state == 2 {
+	image_index += round(delta);
+    //if (_step >= _death_step + 10 && fps > 58) scDistortion(x, y, random(0.5));
+	if _step >= _death_step + 25 {
         instance_destroy();
     }
 }

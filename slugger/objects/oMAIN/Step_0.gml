@@ -16,5 +16,5 @@ if keyboard_check_pressed(ord("L")) {
 
 fx_set_parameter(global._screenshake_info, "g_Magnitude", global._scrshake.mag);
 fx_set_parameter(global._screenshake_info, "g_ShakeSpeed", global._scrshake.spd);
-global._scrshake.mag -= global._scrshake.mag / 20;
-global._scrshake.spd -= global._scrshake.spd / 20;
+global._scrshake.mag -= global._scrshake.mag / 20 * delta;
+global._scrshake.spd -= global._scrshake.spd / 20 * delta;

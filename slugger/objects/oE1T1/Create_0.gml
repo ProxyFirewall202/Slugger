@@ -1,7 +1,7 @@
 event_inherited();
 part_emitter_region(global.p_system, global.E1Death1Emitter, x - 20, x + 20, y - 20, y + 20, ps_shape_rectangle, ps_distr_linear);
 part_emitter_burst(global.p_system, global.E1Death1Emitter, global.E1Death1Type, 5);
-image_speed = 1;
+image_speed = 0;
 image_index = 31;
 _state = 0;
 _step = 0;
