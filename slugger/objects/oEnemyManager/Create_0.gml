@@ -6,4 +6,6 @@ _last_health = mhealth + 1;
 _my_damage = damage;
 _dmg_cooldown = 40;
 _tick = -1;
-_last_update = 0
+_last_update = 0;
+_last_hit = 0;
+_hit = 0;

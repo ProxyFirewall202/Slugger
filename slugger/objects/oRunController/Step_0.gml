@@ -1,4 +1,4 @@
-_tick ++;
+_tick += delta;
 if global._run_state == 1 {
 	//Combo
 	if (global._tick >= global._last_enemy_killed + 60) {
@@ -39,7 +39,8 @@ if global._run_state == 1 {
 	}
 	
 	//Background Particles
-	if (irandom(10) == 0) part_emitter_burst(global.p_system, global.W1ParticleEmitter, global.W1ParticleType, 1);
+	var _spawn_rate = delta / 11;
+	if (random(1) < _spawn_rate) part_emitter_burst(global.p_system, global.W1ParticleEmitter, global.W1ParticleType, 1);
     
 	
 	//Health increase check
@@ -52,7 +53,8 @@ if global._run_state == 1 {
 	}
 	
 	//Create powerup
-	if (irandom(1000) == 0) {
+	_spawn_rate = delta / 1001;
+	if (random(1) < _spawn_rate) {
 		
 		var _id_struct = {
 			_id : 1
@@ -61,8 +63,8 @@ if global._run_state == 1 {
 		instance_create_layer(random(room_width), random(room_height), "Collectables", oDmgT1, _id_struct);
 	}
 	
-	
-	if (irandom(500) == 0 && global._slug_health < global._slug_max_health) {
+	_spawn_rate = delta / 1001;
+	if ((random(1) < _spawn_rate) && global._slug_health < global._slug_max_health) {
 		
 		var _id_struct = {
 			_id : 2
@@ -73,7 +75,7 @@ if global._run_state == 1 {
 	
 	
 	//Damage boost particles
-	if (ds_map_exists(global._powerups, 1) && _tick mod 5 == 0) {
+	if (ds_map_exists(global._powerups, 1) && _tick mod 5 < 1) {
 		part_emitter_region(global.p_system, global.DamagePartEmitter, oSlug.x - 20, oSlug.x + 20, oSlug.y - 20, oSlug.y + 20, ps_shape_rectangle, ps_distr_linear);
 		part_emitter_burst(global.p_system, global.DamagePartEmitter, global.DamagePartType, ds_map_find_value(global._powerups, 1));
 	}

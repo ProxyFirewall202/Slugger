@@ -1,4 +1,4 @@
-if _tick mod 100 == 0 {
+if _tick mod 100 < 1 {
 	_last_health = _my_health;
 	_last_update = _tick;
 }

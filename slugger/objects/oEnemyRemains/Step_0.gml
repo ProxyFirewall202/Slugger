@@ -1,4 +1,4 @@
-tick ++;
+tick += delta;
 
 if tick > 13 {
     var _emitter = variable_global_get(_enemy_name + "RemainsEmitter");

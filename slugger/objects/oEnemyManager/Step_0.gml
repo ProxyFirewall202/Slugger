@@ -1,4 +1,4 @@
-_tick ++;
+_tick += delta;
 
 if _setup = false and global._enemy_spawning = false {
 	_setup = true
@@ -6,10 +6,10 @@ if _setup = false and global._enemy_spawning = false {
 }
 
 if _dmg_cooldown > 0 {
-	_dmg_cooldown --;
+	_dmg_cooldown -= delta;
 }
 
-if place_meeting(x, y, oSlug) && (_dmg_cooldown == 0) {
+if place_meeting(x, y, oSlug) && (_dmg_cooldown < 1) {
 	var _dmg = _my_damage + random_range(-(_my_damage / 5), _my_damage / 5);
 	global._slug_health -= _dmg;
 	global._scrshake.mag += 3.5;
@@ -41,7 +41,7 @@ if place_meeting(x, y, oSlug) && (_dmg_cooldown == 0) {
 	
 	//Enemy being damaged
 	
-	_last_hit = _step;
+	_last_hit = _tick;
 	_hit = 1;
 		
 	var _my_rdamage = 2;

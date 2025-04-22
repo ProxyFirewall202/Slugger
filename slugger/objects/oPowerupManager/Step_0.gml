@@ -1,6 +1,7 @@
-_tick ++;
+_tick += delta;
+image_index += round(delta);
 if (_despawning) {
-	image_alpha -= 0.017
+	image_alpha -= delta / 100;
 	if image_alpha < 0.03 instance_destroy();
 } else if (visible == true) {
 	if (image_index < 62) {

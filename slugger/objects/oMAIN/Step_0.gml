@@ -1,4 +1,4 @@
-global._tick ++;
+global._tick += delta;
 
 if keyboard_check_pressed(ord("L")) {
 	global._run_state = (!global._run_state);
