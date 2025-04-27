@@ -50,6 +50,7 @@ if _state == 1 {
 		_spawning = false;
 		image_index = 180;
         _death_step = _step;
+		_start_time = global._time_scale;
     }
 } else if _state == 0 {
     image_index += round(delta);
@@ -67,6 +68,7 @@ if _state == 1 {
 			};
     }
 } else if _state == 2 {
+	global._time_scale -= (global._time_scale - (-55)) * 0.2;
 	image_index += round(delta);
     //if (_step >= _death_step + 10 && fps > 58) scDistortion(x, y, random(0.5));
 	if _step >= _death_step + 25 {

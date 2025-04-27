@@ -1,5 +1,5 @@
 image_index = 0;
-image_speed = 1;
+image_speed = 0;
 _start_distance = 0;
 _state = 0;
 _tick = 0;

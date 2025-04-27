@@ -13,3 +13,5 @@ if global._run_state {
 	};
 	//instance_create_layer(x, y, "Particles", oEnemyRemains, _tmp_struct)
 }
+
+global._time_scale = 0;

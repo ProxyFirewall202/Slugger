@@ -15,3 +15,4 @@ _last_hit = 0
 _state3_pushed = false;
 _data = 0;
 _spawn_effect_idx = 0;
+_start_time = 0;

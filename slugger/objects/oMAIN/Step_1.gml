@@ -1,1 +1,1 @@
-delta = (delta_time / 1000000) * 60;
+delta = (delta_time / 1000000) * (60 + global._time_scale);
