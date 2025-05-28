@@ -16,26 +16,72 @@ if global._run_state == 1 {
 		if (!keyboard_check(ord("C")) && !keyboard_check(ord("Z"))) _element_key_unpressed = true
 	}
 	
-	
-	
-	if (keyboard_check(ord("C")) && _element_key_unpressed == true) {
-		if (global._current_element < array_length(global._elements)) {
-			global._current_element ++;
-		} else {
-			global._current_element = 0;
-		}
-	_element_last_change_frame = _tick;
-	_element_key_unpressed = false;
+	if (((_tick - _element_last_change_frame) > (2000 * delta)) && (_eswitch)) {
+		_eswitch = false;
 	}
 	
-	if (keyboard_check(ord("Z")) && _element_key_unpressed == true) {
-		if (global._current_element > 0) {
-			global._current_element --;
+	if (_eswitch) {
+			var _percent = (global._time_scale + 60) / 60;
+			global._time_scale = lerp(-60, 0, _percent + 0.01);
 		} else {
-			global._current_element = array_length(global._elements);
+			var _percent = 1 - (global._time_scale + 60) / 60;
+			global._time_scale = lerp(0, -60, _percent + 0.01);
+			if (global._time_scale < -45) global._time_scale = -45;
 		}
-	_element_last_change_frame = _tick;
-	_element_key_unpressed = false;
+	
+	if (((keyboard_check(ord("C"))) || (keyboard_check(ord("Z")))) && (_element_key_unpressed == true)) {
+		if (keyboard_check(ord("C")) && _element_key_unpressed == true) {
+			if (global._current_element < array_length(global._elements)) {
+				global._current_element ++;
+			} else {
+				global._current_element = 0;
+			}
+		_element_last_change_frame = _tick;
+		_element_key_unpressed = false;
+		}
+	
+		if (keyboard_check(ord("Z")) && _element_key_unpressed == true) {
+			if (global._current_element > 0) {
+				global._current_element --;
+			} else {
+				global._current_element = array_length(global._elements);
+			}
+		_element_last_change_frame = _tick;
+		_element_key_unpressed = false;
+		}
+		
+		//Element change particles
+		var _element;
+		if (global._current_element == 1 || global._current_element == 2) {
+			_element = "e" + string(global._current_element);
+		} else {
+			_element = "e" + string(1);
+		}
+		
+		var _etypes = {
+			t1 : global.ELSwitch[$ _element].types.s1,
+			t2 : global.ELSwitch[$ _element].types.s2,
+			t3 : global.ELSwitch[$ _element].types.s3
+		};
+	
+		var _eemitters = {
+			t1 : global.ELSwitch[$ _element].emitters.s1,
+			t2 : global.ELSwitch[$ _element].emitters.s2,
+			t3 : global.ELSwitch[$ _element].emitters.s3
+		};
+		
+		_eswitch = true;
+		
+		part_emitter_region(global.p_system, _eemitters.t1, oSlug.bbox_left, oSlug.bbox_right, oSlug.bbox_top, oSlug.bbox_bottom, ps_shape_ellipse, ps_distr_linear);
+		part_emitter_region(global.p_system, _eemitters.t2, oSlug.bbox_left, oSlug.bbox_right, oSlug.bbox_top, oSlug.bbox_bottom, ps_shape_ellipse, ps_distr_linear);
+		part_emitter_region(global.p_system, _eemitters.t3, oSlug.bbox_left, oSlug.bbox_right, oSlug.bbox_top, oSlug.bbox_bottom, ps_shape_ellipse, ps_distr_linear);
+		part_emitter_burst(global.p_system, _eemitters.t1, _etypes.t1, 100);
+		part_emitter_burst(global.p_system, _eemitters.t2, _etypes.t2, 100);
+		part_emitter_burst(global.p_system, _eemitters.t3, _etypes.t3, 100);
+		
+		show_debug_message("etypes = " + string(_etypes));
+		show_debug_message("eemitters = " + string(_eemitters));
+		
 	}
 	
 	//Background Particles

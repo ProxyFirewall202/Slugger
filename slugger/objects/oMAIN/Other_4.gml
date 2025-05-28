@@ -25,6 +25,131 @@ _pemit1 = part_emitter_create(_ps);
 global.BulletParticleType = _ptype1;
 global.BulletParticleEmitter = _pemit1;
 
+//EL1Switch3
+var _ptype5 = part_type_create();
+part_type_shape(_ptype5, pt_shape_cloud);
+part_type_size(_ptype5, 0.8, 1.5, 0, 0);
+part_type_scale(_ptype5, 2, 2);
+part_type_speed(_ptype5, 1, 1, 0.07, 0);
+part_type_direction(_ptype5, 0, 359, 3, 0);
+part_type_gravity(_ptype5, 0, 270);
+part_type_orientation(_ptype5, 0, 0, 5, 0, true);
+part_type_colour3(_ptype5, $0072FF, $0064FF, $FFFFFF);
+part_type_alpha3(_ptype5, 0, 1, 0);
+part_type_blend(_ptype5, false);
+part_type_life(_ptype5, 220, 240);
+
+var _pemit5 = part_emitter_create(_ps);
+
+//EL1Switch2
+var _ptype6 = part_type_create();
+part_type_shape(_ptype6, pt_shape_square);
+part_type_size(_ptype6, 0.8, 1.5, 0, 0);
+part_type_scale(_ptype6, 0.1, 0.1);
+part_type_speed(_ptype6, 1.3, 2, -0.01, 0);
+part_type_direction(_ptype6, 0, 359, 0, 0);
+part_type_gravity(_ptype6, 0, 270);
+part_type_orientation(_ptype6, 0, 0, 0, 0, true);
+part_type_colour3(_ptype6, $0073FF, $0021F1, $FFFFFF);
+part_type_alpha3(_ptype6, 1, 1, 0);
+part_type_blend(_ptype6, false);
+part_type_life(_ptype6, 220, 250);
+
+var _pemit6 = part_emitter_create(_ps);
+
+//EL1Switch1
+var _ptype7 = part_type_create();
+part_type_shape(_ptype7, pt_shape_line);
+part_type_size(_ptype7, 0.8, 1.5, 0, 0);
+part_type_scale(_ptype7, 0.7, 0.7);
+part_type_speed(_ptype7, 1.3, 2, -0.01, 0);
+part_type_direction(_ptype7, 0, 359, 0, 0);
+part_type_gravity(_ptype7, 0, 270);
+part_type_orientation(_ptype7, 0, 0, 0, 0, true);
+part_type_colour3(_ptype7, $CCE3FF, $0021F1, $FFFFFF);
+part_type_alpha3(_ptype7, 1, 1, 0);
+part_type_blend(_ptype7, false);
+part_type_life(_ptype7, 220, 250);
+
+var _pemit7 = part_emitter_create(_ps);
+
+//EL2Switch3
+var _ptype13 = part_type_create();
+part_type_shape(_ptype13, pt_shape_cloud);
+part_type_size(_ptype13, 0.8, 1.5, 0, 0);
+part_type_scale(_ptype13, 2, 2);
+part_type_speed(_ptype13, 1, 1, 0.07, 0);
+part_type_direction(_ptype13, 0, 359, 3, 0);
+part_type_gravity(_ptype13, 0, 270);
+part_type_orientation(_ptype13, 0, 0, 5, 0, true);
+part_type_colour3(_ptype13, $E2AC24, $E59100, $FFFFFF);
+part_type_alpha3(_ptype13, 0, 1, 0);
+part_type_blend(_ptype13, false);
+part_type_life(_ptype13, 220, 240);
+
+var _pemit13 = part_emitter_create(_ps);
+
+//EL2Switch2
+var _ptype12 = part_type_create();
+part_type_shape(_ptype12, pt_shape_square);
+part_type_size(_ptype12, 0.8, 1.5, 0, 0);
+part_type_scale(_ptype12, 0.1, 0.1);
+part_type_speed(_ptype12, 1.3, 2, -0.01, 0);
+part_type_direction(_ptype12, 0, 359, 0, 0);
+part_type_gravity(_ptype12, 0, 270);
+part_type_orientation(_ptype12, 0, 0, 0, 0, true);
+part_type_colour3(_ptype12, $FF8138, $CC7C14, $FFFFFF);
+part_type_alpha3(_ptype12, 1, 1, 0);
+part_type_blend(_ptype12, false);
+part_type_life(_ptype12, 220, 250);
+
+var _pemit12 = part_emitter_create(_ps);
+
+//EL2Switch1
+ var _ptype11 = part_type_create();
+part_type_shape(_ptype11, pt_shape_line);
+part_type_size(_ptype11, 0.8, 1.5, 0, 0);
+part_type_scale(_ptype11, 0.7, 0.7);
+part_type_speed(_ptype11, 1.3, 2, -0.01, 0);
+part_type_direction(_ptype11, 0, 359, 0, 0);
+part_type_gravity(_ptype11, 0, 270);
+part_type_orientation(_ptype11, 0, 0, 0, 0, true);
+part_type_colour3(_ptype11, $FFDE99, $B27900, $FFFFFF);
+part_type_alpha3(_ptype11, 1, 1, 0);
+part_type_blend(_ptype11, false);
+part_type_life(_ptype11, 220, 250);
+
+var _pemit11 = part_emitter_create(_ps);
+
+global.ELSwitch = {
+	e0 : undefined,
+	e1 : {
+		types : {
+			s1 : _ptype7,
+			s2 : _ptype6,
+			s3 : _ptype5
+		},
+		emitters : {
+			s1 : _pemit7,
+			s2 : _pemit6,
+			s3 : _pemit5
+		}
+	},
+	e2 : {
+		types : {
+			s1 : _ptype13,
+			s2 : _ptype12,
+			s3 : _ptype11
+		},
+		emitters : {
+			s1 : _pemit13,
+			s2 : _pemit12,
+			s3 : _pemit11
+		}
+	}
+};
+	
+
 //BulletHit
 _ptype1 = part_type_create();
 part_type_sprite(_ptype1, sPartShockwaveInner, false, true, false)

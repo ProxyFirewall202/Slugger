@@ -9,6 +9,7 @@ _tick ++;
 //Manage gun
 x = global._slug_instance.x;
 y = global._slug_instance.y;
+image_index = global._current_element;
 image_angle = global._slug_instance.image_angle;
 direction = global._slug_instance.image_angle + 90;
 x += lengthdir_x(15, direction);

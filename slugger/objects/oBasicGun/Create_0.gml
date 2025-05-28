@@ -8,3 +8,5 @@ _scrshake_vals = {
 	mag: 0,
 	spd: 0
 };
+
+image_speed = 0;
