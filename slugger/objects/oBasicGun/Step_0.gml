@@ -28,7 +28,7 @@ if (mouse_check_button(mb_left)) && (global._current_weapon_cooldown < 1) {
 	_scrshake_vals.spd += (0.5 - _scrshake_vals.spd) * 0.05;
 	
 	//Sound effects
-	audio_sound_pitch(snBasicGunShoot, random_range(0.98, 1.02));
+	audio_sound_pitch(snBasicGunShoot, random_range(0.98, 1.02) * delta);
 	audio_play_sound(snBasicGunShoot, 1, false);
 	
 	//Bullet spawn point

@@ -46,7 +46,7 @@ if (place_meeting(x, y, oEnemyManager)) {
 		
 		
 		array_push(global._dmg_dis_queue, _dmg_dis_data);
-		audio_sound_pitch(snHit, lerp(0.9, 2.0, global._combo / 10));
+		audio_sound_pitch(snHit, lerp(0.9, 2.0, global._combo / 10) * delta);
 		audio_play_sound(snHit, 1, false);
         _instance._my_health -= _dmg;
     }

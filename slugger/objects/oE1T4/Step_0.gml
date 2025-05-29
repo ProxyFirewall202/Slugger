@@ -5,7 +5,7 @@ if (_spawning) {
 	
 	if (image_index > 88 && _state3_pushed == false) {
 		array_push(global._entity_spawns, _data);
-		audio_sound_pitch(snEnemySpawn, random_range(0.9, 1.1));
+		audio_sound_pitch(snEnemySpawn, random_range(0.9, 1.1) * delta);
 		audio_play_sound(snEnemySpawn, 1, false);
 		
 		

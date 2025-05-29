@@ -11,10 +11,10 @@ if (_despawning) {
 			if (_id == 1) {
 				if ds_map_exists(global._powerups, _id) {
 					ds_map_replace(global._powerups, _id, ds_map_find_value(global._powerups, _id) + 1);
-					audio_sound_pitch(snPowerupCollect, 1 + (ds_map_find_value(global._powerups, _id) / 50));
+					audio_sound_pitch(snPowerupCollect, (1 + (ds_map_find_value(global._powerups, _id) / 50)) * delta);
 				} else {
 					ds_map_add(global._powerups, _id, 1);
-					audio_sound_pitch(snPowerupCollect, 1);
+					audio_sound_pitch(snPowerupCollect, 1 * delta);
 				}
 			}
 			audio_play_sound(snPowerupCollect, 1, false);

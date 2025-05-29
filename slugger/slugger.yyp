@@ -68,6 +68,7 @@
     {"id":{"name":"snComboRiser","path":"sounds/snComboRiser/snComboRiser.yy",},},
     {"id":{"name":"snComboRiser2","path":"sounds/snComboRiser2/snComboRiser2.yy",},},
     {"id":{"name":"snEnemySpawn","path":"sounds/snEnemySpawn/snEnemySpawn.yy",},},
+    {"id":{"name":"snFireElementSwitch","path":"sounds/snFireElementSwitch/snFireElementSwitch.yy",},},
     {"id":{"name":"snHit","path":"sounds/snHit/snHit.yy",},},
     {"id":{"name":"snLargeDeath","path":"sounds/snLargeDeath/snLargeDeath.yy",},},
     {"id":{"name":"snPowerupCollect","path":"sounds/snPowerupCollect/snPowerupCollect.yy",},},

@@ -1,4 +1,4 @@
-audio_sound_pitch(snSmallDeath, random_range(0.8, 1.2));
+audio_sound_pitch(snSmallDeath, random_range(0.8, 1.2) * delta);
 audio_play_sound(snSmallDeath, 1, false);
 global._scrshake.mag += 5;
 global._scrshake.spd += 5;

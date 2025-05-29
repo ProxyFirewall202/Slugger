@@ -25,7 +25,7 @@ if place_meeting(x, y, oSlug) && (_dmg_cooldown < 1) {
 	part_emitter_region(global.p_system, global.SlugDamageEmitter, x - 20, x + 20, y - 20, y + 20, ps_shape_ellipse, ps_distr_linear);
 	part_emitter_burst(global.p_system, global.SlugDamageEmitter, global.SlugDamageType, 10);
 	
-	audio_sound_pitch(snSlugDamage, lerp(0.8, 1.2, _dmg_percent));
+	audio_sound_pitch(snSlugDamage, lerp(0.8, 1.2, _dmg_percent) * delta);
 	audio_play_sound(snSlugDamage, 1, false);
 	
 	var _dmg_dis_data = {
@@ -67,7 +67,7 @@ if place_meeting(x, y, oSlug) && (_dmg_cooldown < 1) {
 		
 		
 	array_push(global._dmg_dis_queue, _dmg_dis_data);
-	audio_sound_pitch(snHit, lerp(0.98, 1.02, _dmg_percent));
+	audio_sound_pitch(snHit, lerp(0.98, 1.02, _dmg_percent) * delta);
 	audio_play_sound(snHit, 1, false);
     _my_health -= _dmg;
 }

@@ -1,6 +1,7 @@
 _tick += delta;
 if global._run_state == 1 {
 	//Combo
+	audio_sound_pitch(snComboRiser, delta);
 	if (global._tick >= global._last_enemy_killed + 60) {
 		global._combo = 0;
 		audio_stop_sound(snComboRiser);
@@ -16,17 +17,17 @@ if global._run_state == 1 {
 		if (!keyboard_check(ord("C")) && !keyboard_check(ord("Z"))) _element_key_unpressed = true
 	}
 	
-	if (((_tick - _element_last_change_frame) > (2000 * delta)) && (_eswitch)) {
+	if (((_tick - _element_last_change_frame) > (180 * delta)) && (_eswitch)) {
 		_eswitch = false;
 	}
 	
-	if (_eswitch) {
+	if (!_eswitch) {
 			var _percent = (global._time_scale + 60) / 60;
-			global._time_scale = lerp(-60, 0, _percent + 0.01);
+			global._time_scale = lerp(-60, 0, clamp(_percent + 0.01, 0, 1));
 		} else {
 			var _percent = 1 - (global._time_scale + 60) / 60;
-			global._time_scale = lerp(0, -60, _percent + 0.01);
-			if (global._time_scale < -45) global._time_scale = -45;
+			global._time_scale = lerp(0, -60, _percent + 0.07);
+			if (global._time_scale < -55) global._time_scale = -55;
 		}
 	
 	if (((keyboard_check(ord("C"))) || (keyboard_check(ord("Z")))) && (_element_key_unpressed == true)) {
@@ -56,6 +57,10 @@ if global._run_state == 1 {
 			_element = "e" + string(global._current_element);
 		} else {
 			_element = "e" + string(1);
+		}
+		
+		if (global._current_element == 1) {
+			audio_play_sound(snFireElementSwitch, 1, false);
 		}
 		
 		var _etypes = {
