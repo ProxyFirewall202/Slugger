@@ -25,6 +25,54 @@ _pemit1 = part_emitter_create(_ps);
 global.BulletParticleType = _ptype1;
 global.BulletParticleEmitter = _pemit1;
 
+//0ELSwitch3
+var _ptype15 = part_type_create();
+part_type_shape(_ptype15, pt_shape_cloud);
+part_type_size(_ptype15, 0.8, 1.5, 0, 0);
+part_type_scale(_ptype15, 2, 2);
+part_type_speed(_ptype15, 1, 1, 0.07, 0);
+part_type_direction(_ptype15, 0, 359, 3, 0);
+part_type_gravity(_ptype15, 0, 270);
+part_type_orientation(_ptype15, 0, 0, 5, 0, true);
+part_type_colour3(_ptype15, $E0E0E0, $999999, $FFFFFF);
+part_type_alpha3(_ptype15, 0, 1, 0);
+part_type_blend(_ptype15, false);
+part_type_life(_ptype15, 220, 240);
+
+var _pemit15 = part_emitter_create(_ps);
+
+//0ELSwitch2
+var _ptype14 = part_type_create();
+part_type_shape(_ptype14, pt_shape_square);
+part_type_size(_ptype14, 0.8, 1.5, 0, 0);
+part_type_scale(_ptype14, 0.1, 0.1);
+part_type_speed(_ptype14, 1.3, 2, -0.01, 0);
+part_type_direction(_ptype14, 0, 359, 0, 0);
+part_type_gravity(_ptype14, 0, 270);
+part_type_orientation(_ptype14, 0, 0, 0, 0, true);
+part_type_colour3(_ptype14, $FFFFFF, $CCCCCC, $FFFFFF);
+part_type_alpha3(_ptype14, 1, 1, 0);
+part_type_blend(_ptype14, false);
+part_type_life(_ptype14, 220, 250);
+
+var _pemit14 = part_emitter_create(_ps);
+
+//0ELSwitch1
+var _ptype9 = part_type_create();
+part_type_shape(_ptype9, pt_shape_line);
+part_type_size(_ptype9, 0.8, 1.5, 0, 0);
+part_type_scale(_ptype9, 0.7, 0.7);
+part_type_speed(_ptype9, 1.3, 2, -0.01, 0);
+part_type_direction(_ptype9, 0, 359, 0, 0);
+part_type_gravity(_ptype9, 0, 270);
+part_type_orientation(_ptype9, 0, 0, 0, 0, true);
+part_type_colour3(_ptype9, $FFFFFF, $AFAFAF, $FFFFFF);
+part_type_alpha3(_ptype9, 1, 1, 0);
+part_type_blend(_ptype9, false);
+part_type_life(_ptype9, 220, 250);
+
+var _pemit9 = part_emitter_create(_ps);
+
 //EL1Switch3
 var _ptype5 = part_type_create();
 part_type_shape(_ptype5, pt_shape_cloud);
@@ -122,7 +170,18 @@ part_type_life(_ptype11, 220, 250);
 var _pemit11 = part_emitter_create(_ps);
 
 global.ELSwitch = {
-	e0 : undefined,
+	e0 : {
+		types : {
+			s1 : _ptype9,
+			s2 : _ptype14,
+			s3 : _ptype15
+		},
+		emitters : {
+			s1 : _pemit9,
+			s2 : _pemit14,
+			s3 : _pemit15
+		}
+	},
 	e1 : {
 		types : {
 			s1 : _ptype7,

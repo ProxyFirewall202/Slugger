@@ -1,6 +1,6 @@
 {
   "$GMSound":"",
-  "%Name":"snBasicGunShoot",
+  "%Name":"snES2",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -9,8 +9,8 @@
   "bitRate":512,
   "compression":0,
   "conversionMode":0,
-  "duration":5.7377324,
-  "name":"snBasicGunShoot",
+  "duration":3.4387982,
+  "name":"snES2",
   "parent":{
     "name":"Sounds",
     "path":"folders/Sounds.yy",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":48000,
-  "soundFile":"snBasicGunShoot.wav",
+  "soundFile":"snES2.wav",
   "type":1,
-  "volume":0.1,
+  "volume":1.0,
 }
