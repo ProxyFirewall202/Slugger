@@ -9,7 +9,7 @@
   "bitRate":512,
   "compression":0,
   "conversionMode":0,
-  "duration":12.576009,
+  "duration":12.576,
   "name":"snComboRiser2",
   "parent":{
     "name":"Sounds",

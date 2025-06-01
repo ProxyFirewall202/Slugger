@@ -9,7 +9,7 @@
   "bitRate":512,
   "compression":0,
   "conversionMode":0,
-  "duration":5.7377324,
+  "duration":5.737729,
   "name":"snBasicGunShoot",
   "parent":{
     "name":"Sounds",

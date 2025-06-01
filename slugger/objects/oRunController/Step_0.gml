@@ -53,16 +53,15 @@ if global._run_state == 1 {
 		
 		//Element change particles
 		var _element;
-		var _sound;
-		if (global._current_element == 1 || global._current_element == 2 || global._current_element == 0) {
+		if (global._current_element == 1 || global._current_element == 2) {
 			_element = "e" + string(global._current_element);
-			_sound = asset_get_index("snES" + string(global._current_element));
 		} else {
-			_element = "e" + string(0);
-			_sound = asset_get_index("snES1");
+			_element = "e" + string(1);
 		}
 		
-		audio_play_sound(_sound, 1, false);
+		if (global._current_element == 1) {
+			audio_play_sound(snFireElementSwitch, 1, false);
+		}
 		
 		var _etypes = {
 			t1 : global.ELSwitch[$ _element].types.s1,
