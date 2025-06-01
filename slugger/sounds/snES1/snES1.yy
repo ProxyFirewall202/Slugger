@@ -1,6 +1,6 @@
 {
   "$GMSound":"",
-  "%Name":"snFireElementSwitch",
+  "%Name":"snES1",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -10,7 +10,7 @@
   "compression":0,
   "conversionMode":0,
   "duration":10.44,
-  "name":"snFireElementSwitch",
+  "name":"snES1",
   "parent":{
     "name":"Sounds",
     "path":"folders/Sounds.yy",
@@ -19,7 +19,7 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":48000,
-  "soundFile":"snFireElementSwitch.wav",
+  "soundFile":"snES1.wav",
   "type":1,
   "volume":1.0,
 }
