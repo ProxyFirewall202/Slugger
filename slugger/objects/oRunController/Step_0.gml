@@ -1,5 +1,17 @@
 _tick += delta;
 if global._run_state == 1 {
+	//Wave control
+	global._wave_time = clamp(global._wave_time + delta, 0, global._wave_length);
+	global._wave_complete = global._wave_time / global._wave_length;
+	/*if global._wave_complete == 1 {
+		global._run_state = 0;
+		with (all) {
+			if (run_only == 1) {
+				instance_destroy();
+			}
+		}
+	}*/
+	
 	//Combo
 	audio_sound_pitch(snComboRiser, delta);
 	if (global._tick >= global._last_enemy_killed + 60) {
@@ -11,6 +23,28 @@ if global._run_state == 1 {
 		audio_play_sound(snComboRiser, 1, false);
 		audio_play_sound(snComboRiser2, 1, false);
 	}
+	
+	//Spawn Enemies
+	var _spawn_rate;
+	if global._wave_complete < 0.7 {
+		_spawn_rate = delta / 81;
+	} else {
+		_spawn_rate = delta / 6;
+	}
+	if ((random(1) < _spawn_rate) && (global._wave_complete < 1)) {
+		var _edge = irandom(3);
+		var _x = (_edge == 1) ? room_width : ((_edge == 3) ? 0 : (irandom(room_width)));
+		var _y = (_edge == 0) ? 0 : ((_edge == 2) ? room_height : (irandom(room_height)));
+		var _data = {
+			etype : 1,
+			xpos : _x,
+			ypos : _y
+		}
+		array_push(global._entity_spawns, _data);
+		audio_sound_pitch(snEnemySpawn, random_range(0.9, 1.1) * delta);
+		audio_play_sound(snEnemySpawn, 1, false);
+	};
+
 	
 	//Element check
 	if (_tick > _element_last_change_frame && _element_key_unpressed == false) {

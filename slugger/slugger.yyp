@@ -45,7 +45,6 @@
     {"id":{"name":"oDistortionEffect","path":"objects/oDistortionEffect/oDistortionEffect.yy",},},
     {"id":{"name":"oDmgT1","path":"objects/oDmgT1/oDmgT1.yy",},},
     {"id":{"name":"oE1T1","path":"objects/oE1T1/oE1T1.yy",},},
-    {"id":{"name":"oE1T4","path":"objects/oE1T4/oE1T4.yy",},},
     {"id":{"name":"oEnemyManager","path":"objects/oEnemyManager/oEnemyManager.yy",},},
     {"id":{"name":"oEnemyRemains","path":"objects/oEnemyRemains/oEnemyRemains.yy",},},
     {"id":{"name":"oEntityManager","path":"objects/oEntityManager/oEntityManager.yy",},},

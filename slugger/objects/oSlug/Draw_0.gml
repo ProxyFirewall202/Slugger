@@ -6,4 +6,5 @@ draw_text(room_width / 2, 45, "HP: " + string(global._slug_health));
 draw_text(room_width / 2 + 100, 45, "WS: " + string(global._warped_souls));
 draw_text(room_width / 2 + 200, 45, "Combo: " + string(global._combo));
 draw_text(room_width / 2, 80, "Element: " + string(global._current_element));
+draw_text(room_width / 2 - 100, 45, "Wave %: " + string(global._wave_complete));
 gpu_set_fog(false, make_color_rgb(_col, _col, _col), 0, 0);

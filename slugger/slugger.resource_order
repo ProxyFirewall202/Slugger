@@ -25,7 +25,6 @@
     {"name":"oDistortionEffect","order":11,"path":"objects/oDistortionEffect/oDistortionEffect.yy",},
     {"name":"oDmgT1","order":15,"path":"objects/oDmgT1/oDmgT1.yy",},
     {"name":"oE1T1","order":9,"path":"objects/oE1T1/oE1T1.yy",},
-    {"name":"oE1T4","order":14,"path":"objects/oE1T4/oE1T4.yy",},
     {"name":"oEnemyRemains","order":10,"path":"objects/oEnemyRemains/oEnemyRemains.yy",},
     {"name":"oEntityManager","order":1,"path":"objects/oEntityManager/oEntityManager.yy",},
     {"name":"oHealthBar","order":12,"path":"objects/oHealthBar/oHealthBar.yy",},

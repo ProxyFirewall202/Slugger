@@ -2,6 +2,8 @@ function scInitRun(){
     
     //Set wave
     global._wave = 1;
+	global._wave_complete = 0;
+	global._wave_time = 0;
     
     //Reset
 	global._max_slug_health = 100;
@@ -80,11 +82,11 @@ function scInitRun(){
         ds_map_add(global._single_instances, "runcontroller", instance_create_layer(x, y, "HUD", oRunController));
     }
 	
-	//Spawn Hivox
+	/*Spawn Hivox
 	var _data = {
 		etype : 4,
 		xpos : room_width / 2,
 		ypos : room_height / 2
 	};
-	array_push(global._entity_spawns, _data);
+	array_push(global._entity_spawns, _data);*/
 }
