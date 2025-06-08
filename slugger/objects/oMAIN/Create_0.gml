@@ -25,12 +25,12 @@ global._run_state = 0;
 global._wave_complete = undefined;
 global._wave_length = 7200;
 global._wave_time = undefined;
-global._weapon_cooldown = 10;
+global._weapon_cooldown = 30;
 global._single_instances = ds_map_create();
 
 global._wave = 0;
 
-global._current_weapon = "NA";
+global._current_weapon = undefined;
 global._current_element = 0;
 global._elements = [];
 global._element_colours = {

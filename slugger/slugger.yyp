@@ -59,6 +59,7 @@
     {"id":{"name":"oWeaponManager","path":"objects/oWeaponManager/oWeaponManager.yy",},},
     {"id":{"name":"pMain","path":"particles/pMain/pMain.yy",},},
     {"id":{"name":"rRUN","path":"rooms/rRUN/rRUN.yy",},},
+    {"id":{"name":"scDealDamage","path":"scripts/scDealDamage/scDealDamage.yy",},},
     {"id":{"name":"scDistortionEffect","path":"scripts/scDistortionEffect/scDistortionEffect.yy",},},
     {"id":{"name":"scEnemyParticles","path":"scripts/scEnemyParticles/scEnemyParticles.yy",},},
     {"id":{"name":"scEnumFindKey","path":"scripts/scEnumFindKey/scEnumFindKey.yy",},},

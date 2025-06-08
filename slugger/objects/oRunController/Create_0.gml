@@ -6,3 +6,4 @@ _last_health = global._slug_max_health;
 _element_last_change_frame = 0;
 _element_key_unpressed = false;
 _eswitch = false;
+global._current_weapon_cooldown = global._weapon_cooldown

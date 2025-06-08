@@ -11,11 +11,16 @@ function scInitRun(){
 	if variable_global_exists("_enemies") ds_map_clear(global._enemies);
 	
     //Manage weapons
-    global._current_weapon = oBasicGun;
-    global._weapon_info = {
-        basicgun : {
+    global._current_weapon = 0;
+    
+	
+	
+	global._weapon_info = {
+        w0 : {
             damage : 5, 
-            crit : 0.13
+            crit : 0.13,
+			name : "basicgun",
+			obj : oBasicGun
         }
     };
     
@@ -55,10 +60,14 @@ function scInitRun(){
     global._slug_instance = ds_map_find_value(global._single_instances, "slug");
     
     // Create basic gun
-    if (ds_map_exists(global._single_instances, "basicgun")) {
-            ds_map_replace(global._single_instances, "basicgun", instance_create_layer(x, y, "Instances", global._current_weapon));
+	var _tmp0 = "w" + string(global._current_weapon);
+	var _name = global._weapon_info[$ _tmp0].name
+	var _obj = global._weapon_info[$ _tmp0].obj
+	
+    if (ds_map_exists(global._single_instances, string(_name))) {
+            ds_map_replace(global._single_instances, string(_name), instance_create_layer(x, y, "Instances", _obj));
     } else {
-        ds_map_add(global._single_instances, "basicgun", instance_create_layer(x, y, "Instances", global._current_weapon));
+        ds_map_add(global._single_instances, string(_name), instance_create_layer(x, y, "Instances", _obj));
     }
     
     // Create entity manager

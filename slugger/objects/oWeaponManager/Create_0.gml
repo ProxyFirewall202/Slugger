@@ -1,2 +1,8 @@
 run_only = 1;
-global._current_weapon_cooldown = global._weapon_cooldown
+_tick = 0;
+_using = false;
+
+_scrshake_vals = {
+	mag: 0,
+	spd: 0
+};

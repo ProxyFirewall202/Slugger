@@ -35,6 +35,7 @@
     {"name":"oW1BG","order":8,"path":"objects/oW1BG/oW1BG.yy",},
     {"name":"oWarpedSoul","order":13,"path":"objects/oWarpedSoul/oWarpedSoul.yy",},
     {"name":"oWeaponManager","order":5,"path":"objects/oWeaponManager/oWeaponManager.yy",},
+    {"name":"scDealDamage","order":5,"path":"scripts/scDealDamage/scDealDamage.yy",},
     {"name":"scDistortionEffect","order":2,"path":"scripts/scDistortionEffect/scDistortionEffect.yy",},
     {"name":"scInitRun","order":1,"path":"scripts/scInitRun/scInitRun.yy",},
     {"name":"snComboRiser","order":9,"path":"sounds/snComboRiser/snComboRiser.yy",},

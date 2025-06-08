@@ -29,7 +29,7 @@ if global._run_state == 1 {
 	if global._wave_complete < 0.7 {
 		_spawn_rate = delta / 81;
 	} else {
-		_spawn_rate = delta / 6;
+		_spawn_rate = delta / 21;
 	}
 	if ((random(1) < _spawn_rate) && (global._wave_complete < 1)) {
 		var _edge = irandom(3);
@@ -136,6 +136,16 @@ if global._run_state == 1 {
 			part_emitter_burst(global.p_system, global.HealthPartEmitter, global.HealthPartType, global._slug_health - _last_health);
 		}
 		_last_health = global._slug_health;
+	}
+	
+	//Death check
+	if (global._slug_health <= 0) {
+		global._run_state = 0;
+		with (all) {
+			if (run_only == 1) {
+				instance_destroy();
+			}
+		}
 	}
 	
 	//Create powerup

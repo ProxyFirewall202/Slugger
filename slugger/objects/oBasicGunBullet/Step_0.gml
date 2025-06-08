@@ -14,13 +14,15 @@ if (place_meeting(x, y, oEnemyManager)) {
 		global._scrshake.mag += 2;
 		global._scrshake.spd += 2;
 		
-		_instance._last_hit = _instance._step;
+		scDealDamage(_instance, 0, x, y);
+		
+		/*_instance._last_hit = _instance._step;
 		_instance._hit = 1;
 		
-		var _my_damage = global._weapon_info.basicgun.damage;
+		var _my_damage = global._weapon_info.w0.damage;
         var _dmg;
         var _crit;
-        if random(1) < global._weapon_info.basicgun.crit {
+        if random(1) < global._weapon_info.w0.crit {
             _dmg = (_my_damage + _my_damage / 1.5) + random_range(-(_my_damage / 4), _my_damage / 4);
             _crit = 1;
         } else {
@@ -48,7 +50,7 @@ if (place_meeting(x, y, oEnemyManager)) {
 		array_push(global._dmg_dis_queue, _dmg_dis_data);
 		audio_sound_pitch(snHit, lerp(0.9, 2.0, global._combo / 10) * delta);
 		audio_play_sound(snHit, 1, false);
-        _instance._my_health -= _dmg;
+        _instance._my_health -= _dmg;*/
     }
 	instance_destroy();
 }
