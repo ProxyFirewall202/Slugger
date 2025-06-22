@@ -1,4 +1,7 @@
 _tick ++;
+
+image_index += round(delta);
+
 x += lengthdir_x(_vel, direction) * delta;
 y += lengthdir_y(_vel, direction) * delta;
 _vel += delta;
