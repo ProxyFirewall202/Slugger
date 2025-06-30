@@ -19,7 +19,7 @@ if (place_meeting(x, y, oEnemyManager)) {
 		
 		scDealDamage(_instance, 0, x, y);
 		
-		/*_instance._last_hit = _instance._step;
+		_instance._last_hit = _instance._step;
 		_instance._hit = 1;
 		
 		var _my_damage = global._weapon_info.w0.damage;
@@ -51,9 +51,9 @@ if (place_meeting(x, y, oEnemyManager)) {
 		
 		
 		array_push(global._dmg_dis_queue, _dmg_dis_data);
-		audio_sound_pitch(snHit, lerp(0.9, 2.0, global._combo / 10) * delta);
+		audio_sound_pitch(snHit, lerp(0.9, 2.0, global._combo / 10) * pitchscale);
 		audio_play_sound(snHit, 1, false);
-        _instance._my_health -= _dmg;*/
+        _instance._my_health -= _dmg;
     }
 	instance_destroy();
 }

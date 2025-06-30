@@ -1,8 +1,9 @@
 global._tick += delta;
 
+show_debug_message(delta);
+
 if keyboard_check_pressed(ord("L")) {
 	global._run_state = (!global._run_state);
-	show_debug_message(global._run_state);
 	if global._run_state == 1 {
 		scInitRun();
 	} else {
@@ -27,5 +28,3 @@ if keyboard_check_pressed(ord("4")) game_set_speed(250, gamespeed_fps);
 
 if keyboard_check_pressed(ord("9")) global._time_scale += 5;
 if keyboard_check_pressed(ord("8")) global._time_scale -= 5;
-
-show_debug_message(global._time_scale);

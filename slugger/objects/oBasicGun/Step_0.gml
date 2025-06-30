@@ -19,7 +19,7 @@ if (_using) {
 	_shoot_tick = _tick;
 	
 	//Sound effects
-	audio_sound_pitch(snBasicGunShoot, random_range(0.98, 1.02) * delta);
+	audio_sound_pitch(snBasicGunShoot, random_range(0.98, 1.02) * pitchscale);
 	audio_play_sound(snBasicGunShoot, 1, false);
 	
 	//Bullet spawn point

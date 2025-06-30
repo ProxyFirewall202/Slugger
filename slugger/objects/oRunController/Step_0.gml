@@ -1,4 +1,5 @@
 _tick += delta;
+
 if global._run_state == 1 {
 	//Wave control
 	global._wave_time = clamp(global._wave_time + delta, 0, global._wave_length);
@@ -13,7 +14,7 @@ if global._run_state == 1 {
 	}*/
 	
 	//Combo
-	audio_sound_pitch(snComboRiser, delta);
+	audio_sound_pitch(snComboRiser, pitchscale);
 	if (global._tick >= global._last_enemy_killed + 60) {
 		global._combo = 0;
 		audio_stop_sound(snComboRiser);
@@ -41,7 +42,7 @@ if global._run_state == 1 {
 			ypos : _y
 		}
 		array_push(global._entity_spawns, _data);
-		audio_sound_pitch(snEnemySpawn, random_range(0.9, 1.1) * delta);
+		audio_sound_pitch(snEnemySpawn, random_range(0.9, 1.1) * pitchscale);
 		audio_play_sound(snEnemySpawn, 1, false);
 	};
 
@@ -119,9 +120,6 @@ if global._run_state == 1 {
 		part_emitter_burst(global.p_system, _eemitters.t2, _etypes.t2, 100);
 		part_emitter_burst(global.p_system, _eemitters.t3, _etypes.t3, 100);
 		
-		show_debug_message("etypes = " + string(_etypes));
-		show_debug_message("eemitters = " + string(_eemitters));
-		
 	}
 	
 	//Background Particles
@@ -182,7 +180,6 @@ if global._run_state == 1 {
 		var _my_info;
         repeat (array_length(global._dmg_dis_queue)) {
             _info = global._dmg_dis_queue[0];
-            show_debug_message(string(_info));
 			
 			
 			var _colour = 0;

@@ -11,6 +11,8 @@ audio_channel_num(128);
 game_set_speed(60, gamespeed_fps);
 
 global._delta_factor = 1;
+global._sound_pitch_scale = 1;
+#macro pitchscale global._sound_pitch_scale
 #macro delta global._delta_factor
 
 global._time_scale = 0;
