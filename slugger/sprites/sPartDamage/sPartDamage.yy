@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"sPartDamage",
   "bboxMode":0,
   "bbox_bottom":1218,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"a2326b8c-4924-480a-b0a6-f28e82e971ea","name":"a2326b8c-4924-480a-b0a6-f28e82e971ea","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"a2326b8c-4924-480a-b0a6-f28e82e971ea","name":"a2326b8c-4924-480a-b0a6-f28e82e971ea","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

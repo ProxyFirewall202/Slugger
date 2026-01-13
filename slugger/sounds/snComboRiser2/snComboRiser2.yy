@@ -1,15 +1,17 @@
 {
-  "$GMSound":"",
+  "$GMSound":"v2",
   "%Name":"snComboRiser2",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
   },
   "bitDepth":1,
-  "bitRate":512,
+  "channelFormat":1,
   "compression":0,
+  "compressionQuality":10,
   "conversionMode":0,
   "duration":12.576009,
+  "exportDir":"",
   "name":"snComboRiser2",
   "parent":{
     "name":"Sounds",
@@ -20,6 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":48000,
   "soundFile":"snComboRiser2.mp3",
-  "type":1,
   "volume":1.0,
 }

@@ -1,9 +1,9 @@
-_tick += delta;
+   _tick += delta;
 
 if _setup = false and global._enemy_spawning = false {
 	_setup = true
 	_my_health = ds_map_find_value(global._enemies, _my_id).health;
-}
+}  
 
 if _dmg_cooldown > 0 {
 	_dmg_cooldown -= delta;

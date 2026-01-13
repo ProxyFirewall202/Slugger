@@ -1,4 +1,4 @@
-_step += delta;
+ _step += delta;
 
 
 if _state == 1 {
@@ -10,6 +10,23 @@ if _state == 1 {
 	image_index += round(delta);
 	_gun_index += round(delta);
 
+	//Bullet calculation
+	var _total_frames = sprite_get_number(sE1Gun1);
+	var _shoot_frame = 95;
+	
+	if (_gun_index == _shoot_frame && !_has_shot) {
+		var _bullet_data = 
+		{
+			_vel : 1,
+			_max_speed : 16,
+			_dir : direction
+		};
+		var _bullet = instance_create_layer(x, y, "Instances", oE1T1Bullet, _bullet_data);
+		_has_shot = true;
+	}
+	
+	if (_gun_index != _shoot_frame) _has_shot = false;
+	
     if _my_health < 1 {
         _state = 2;
         _death_step = int64(_step);

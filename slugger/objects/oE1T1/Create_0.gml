@@ -11,3 +11,4 @@ _hit = 0;
 _last_hit = 0 ;
 _spawn_index = 0;
 _gun_index = 1;
+_has_shot = false;

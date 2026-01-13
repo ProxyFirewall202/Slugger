@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"sHealthBarBG",
   "bboxMode":0,
   "bbox_bottom":36,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"004ce62a-2df5-42f7-8ab1-6a7f9fda71b1","name":"004ce62a-2df5-42f7-8ab1-6a7f9fda71b1","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"004ce62a-2df5-42f7-8ab1-6a7f9fda71b1","name":"004ce62a-2df5-42f7-8ab1-6a7f9fda71b1","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"sPartHealth",
   "bboxMode":0,
   "bbox_bottom":9373,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"aa3b461d-b20f-42ff-bed6-d9f6a1aef547","name":"aa3b461d-b20f-42ff-bed6-d9f6a1aef547","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"aa3b461d-b20f-42ff-bed6-d9f6a1aef547","name":"aa3b461d-b20f-42ff-bed6-d9f6a1aef547","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

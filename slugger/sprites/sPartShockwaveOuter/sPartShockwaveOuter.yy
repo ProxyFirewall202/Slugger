@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"sPartShockwaveOuter",
   "bboxMode":0,
   "bbox_bottom":56,
@@ -12,7 +12,7 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"7d5dc413-eb36-4e6b-a8fa-4c5d53d63e65","name":"7d5dc413-eb36-4e6b-a8fa-4c5d53d63e65","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"7d5dc413-eb36-4e6b-a8fa-4c5d53d63e65","name":"7d5dc413-eb36-4e6b-a8fa-4c5d53d63e65","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,

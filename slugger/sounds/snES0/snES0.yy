@@ -1,15 +1,17 @@
 {
-  "$GMSound":"",
+  "$GMSound":"v2",
   "%Name":"snES0",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
   },
   "bitDepth":1,
-  "bitRate":512,
+  "channelFormat":1,
   "compression":0,
+  "compressionQuality":10,
   "conversionMode":0,
   "duration":6.322313,
+  "exportDir":"",
   "name":"snES0",
   "parent":{
     "name":"Sounds",
@@ -20,6 +22,5 @@
   "resourceVersion":"2.0",
   "sampleRate":48000,
   "soundFile":"snES0.wav",
-  "type":1,
   "volume":1.0,
 }
