@@ -1,8 +1,8 @@
 global._tick += delta;
 
-show_debug_message(delta);
+//show_debug_message(delta);
 
-if keyboard_check_pressed(ord("L")) {
+if (mouse_check_button(mb_left) && !_started) {
 	global._run_state = (!global._run_state);
 	if global._run_state == 1 {
 		scInitRun();
@@ -13,6 +13,7 @@ if keyboard_check_pressed(ord("L")) {
 			}
 		}
 	}
+	_started = true;
 }
 
 fx_set_parameter(global._screenshake_info, "g_Magnitude", global._scrshake.mag);

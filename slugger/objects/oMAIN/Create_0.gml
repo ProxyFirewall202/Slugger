@@ -70,3 +70,5 @@ ds_map_add(global.EnemyD, "oE1T1", 10);
 ds_map_add(global.EnemyD, "oE1T4", 40);
 
 global._slug_max_health = 100;
+
+_started = false

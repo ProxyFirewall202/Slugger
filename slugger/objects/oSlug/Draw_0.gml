@@ -1,4 +1,4 @@
-var _vel = abs(_xvel) + abs(_yvel);
+ var _vel = abs(_xvel) + abs(_yvel);
 var _col = clamp(lerp(0, 255, _vel / 5), 0, 255);
 if (_vel > 1) gpu_set_fog(true, make_color_rgb(_col, _col, _col), 0, 0);
 draw_self();

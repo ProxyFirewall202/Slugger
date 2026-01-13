@@ -1,4 +1,4 @@
-run_only = 1;
+ run_only = 1;
 event_inherited();
 global._bullets = ds_map_create();
 _bullet_next_id = 0;

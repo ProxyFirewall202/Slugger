@@ -12,14 +12,21 @@ if _state == 1 {
 
 	//Bullet calculation
 	var _total_frames = sprite_get_number(sE1Gun1);
-	var _shoot_frame = 95;
+	var _shoot_frame = 80;
+	var _converted_frame = _gun_index % 120;
 	
-	if (_gun_index == _shoot_frame && !_has_shot) {
+	if (_my_id == 1) {
+		show_debug_message("_gun_index: " + string(_gun_index));
+		show_debug_message("_converted_frame: " + string(_converted_frame));
+	}
+	
+	if (_converted_frame == 80 && _gun_index > 0 && !_has_shot) {
 		var _bullet_data = 
 		{
 			_vel : 1,
 			_max_speed : 16,
-			_dir : direction
+			_dir : direction,
+			_my_damage : _my_damage
 		};
 		var _bullet = instance_create_layer(x, y, "Instances", oE1T1Bullet, _bullet_data);
 		_has_shot = true;
