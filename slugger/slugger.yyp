@@ -84,6 +84,7 @@
     {"id":{"name":"snPowerupEnd","path":"sounds/snPowerupEnd/snPowerupEnd.yy",},},
     {"id":{"name":"snSlugDamage","path":"sounds/snSlugDamage/snSlugDamage.yy",},},
     {"id":{"name":"snSmallDeath","path":"sounds/snSmallDeath/snSmallDeath.yy",},},
+    {"id":{"name":"snW1Music","path":"sounds/snW1Music/snW1Music.yy",},},
     {"id":{"name":"snWarpedSoul","path":"sounds/snWarpedSoul/snWarpedSoul.yy",},},
     {"id":{"name":"sBasicGun","path":"sprites/sBasicGun/sBasicGun.yy",},},
     {"id":{"name":"sBasicGunBullet","path":"sprites/sBasicGunBullet/sBasicGunBullet.yy",},},
