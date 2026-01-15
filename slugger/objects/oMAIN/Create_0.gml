@@ -77,3 +77,12 @@ ds_map_add(global.EnemyD, "oE1T4", 40);
 global._slug_max_health = 100;
 
 _started = false
+
+global.W1Schedule = ds_map_create();
+var _edata = {
+	xpos : room_width / 2,
+	ypos : room_height,
+	dir : 0
+};
+
+ds_map_add(global.W1Schedule, 1, _edata);

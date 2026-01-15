@@ -49,7 +49,7 @@ if global._run_state == 1 {
 	
 	//Element check
 	if (_tick > _element_last_change_frame && _element_key_unpressed == false) {
-		if (!keyboard_check(ord("C")) && !keyboard_check(ord("Z"))) _element_key_unpressed = true
+		if (!keyboard_check(ord("C")) && !keyboard_check(ord("Z"))) _element_key_unpressed = true 
 	}
 	
 	if (((_tick - _element_last_change_frame) > (180 * delta)) && (_eswitch)) {
