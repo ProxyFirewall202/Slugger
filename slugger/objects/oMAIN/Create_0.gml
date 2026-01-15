@@ -78,11 +78,14 @@ global._slug_max_health = 100;
 
 _started = false
 
+//W1 Scheduler
 global.W1Schedule = ds_map_create();
-var _edata = {
-	xpos : room_width / 2,
-	ypos : room_height,
-	dir : 0
-};
-
-ds_map_add(global.W1Schedule, 1, _edata);
+global.w1_schedule_num = 0;
+scW1Schedule();
+show_debug_message("↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓    W1 SCHEDULE    ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓");
+var current_key = ds_map_find_first(global.W1Schedule);
+repeat (ds_map_size(global.W1Schedule)) {
+    var current_value = ds_map_find_value(global.W1Schedule, current_key);
+    show_debug_message("Key: " + string(current_key) + ", Value: " + string(current_value));
+    current_key = ds_map_find_next(global.W1Schedule, current_key);
+}

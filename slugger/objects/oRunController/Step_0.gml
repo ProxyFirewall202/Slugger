@@ -26,7 +26,7 @@ if global._run_state == 1 {
 	}
 	
 	//Spawn Enemies
-	var _spawn_rate;
+	/*var _spawn_rate;
 	if global._wave_complete < 0.7 {
 		_spawn_rate = delta / 81;
 	} else {
@@ -44,7 +44,33 @@ if global._run_state == 1 {
 		array_push(global._entity_spawns, _data);
 		audio_sound_pitch(snEnemySpawn, random_range(0.9, 1.1) * pitchscale);
 		audio_play_sound(snEnemySpawn, 1, false);
-	};
+	};*/
+
+
+
+	//Spawn Enemies
+	global.w1_schedule_num ++;
+	
+	if (global.w1_schedule_num <= ds_map_size(global.W1Schedule)) {
+	
+		var _inbound_data = ds_map_find_value(global.W1Schedule, global.w1_schedule_num);
+	
+		show_debug_message(string(_inbound_data));
+	
+		var _data = {
+			etype : _inbound_data.enemy,
+			xpos : _inbound_data.xpos,
+			ypos : _inbound_data.ypos,
+			dir : _inbound_data.dir,
+			distance : _inbound_data.distance
+		};
+		array_push(global._entity_spawns, _data);
+		audio_sound_pitch(snEnemySpawn, random_range(0.9, 1.1) * pitchscale);
+		audio_play_sound(snEnemySpawn, 1, false);
+	}
+	
+
+
 
 	
 	//Element check
