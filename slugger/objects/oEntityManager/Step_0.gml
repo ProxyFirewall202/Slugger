@@ -1,15 +1,21 @@
-if array_length(global._entity_spawns) > 0 {
+  if array_length(global._entity_spawns) > 0 {
 	global._enemy_spawning = true;
 	global._current_enemy_id ++;
 	var _data = global._entity_spawns[0];
 	var _enemy_type = _data.etype;
 	array_delete(global._entity_spawns, 0, 1);
 	var _enemy_name = "oE" + string(global._wave) + "T" + string(_enemy_type);
-	var _enemy_object = asset_get_index(_enemy_name);
+	var _enemy_object = asset_get_index(_enemy_name); 
 	var _tmp = {
         nhealth : ds_map_find_value(global.EnemyH, _enemy_name),
         mhealth : ds_map_find_value(global.EnemyH, _enemy_name),
-		damage : ds_map_find_value(global.EnemyD, _enemy_name)
+		damage : ds_map_find_value(global.EnemyD, _enemy_name),
+		dir : _data.dir,
+		distance : _data.distance,
+		shoottime : _data.shoottime,
+		follow : _data.follow,
+		gun : _data.gun,
+		spd : _data.spd
     };
 	
 	var _spawn = {

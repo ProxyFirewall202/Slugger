@@ -7,3 +7,4 @@ _element_last_change_frame = 0;
 _element_key_unpressed = false;
 _eswitch = false;
 global._current_weapon_cooldown = global._weapon_cooldown
+_last_enemy = 0;
