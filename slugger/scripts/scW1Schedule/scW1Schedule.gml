@@ -1,33 +1,81 @@
 function scW1Schedule(){
 	
 	//Add to ds_map
-	function AddEnemy(_num, _x, _y, _dir, _enemy, _tick_delay, _dis, _shoot_time, _follow, _gun, _spd) {
-		var _data = {
-			xpos : _x,
-			ypos : _y,
-			dir : _dir,
-			enemy : _enemy,
-			tickdel : _tick_delay,
-			distance : _dis,
-			shoottime : _shoot_time,
-			follow : _follow,
-			gun : _gun,
-			spd : _spd
-		};
-			
-		if (_num == undefined) {
-			ds_map_add(global.W1Schedule, ds_map_size(global.W1Schedule) + 1, _data);
+	function AddEnemy(_input) {
+		if (_input.num == undefined) {
+			ds_map_add(global.W1Schedule, ds_map_size(global.W1Schedule) + 1, _input);
 		} else {
-			ds_map_add(global.W1Schedule, _num, _data);
+			ds_map_add(global.W1Schedule, _num, _input);
 		}
 	}
 	
 	//Batch 1
-	AddEnemy(undefined, room_width / 2, room_height, 0, 1, 1200, 50, 120, false, 1, 5);
-	AddEnemy(undefined, room_width / 2, 0, 0, 1, 340, 50, 120, false, 1, 5);
-	AddEnemy(undefined, 0, room_height / 2, 0, 1, 0, 50, 120, false, 1, 5);
-	AddEnemy(undefined, room_width, room_height / 2, 0, 1, 600, 50, 120, false, 1, 5);
+	//Spawn each side instantly
+	AddEnemy({
+		num : undefined,
+		xpos : room_width / 2,
+		ypos : room_height,
+		dir : 90,
+		enemy : 1,
+		tickdel : 0,
+		distance : 0.5,
+		shoottime : 20,
+		follow : false,
+		gun : 1,
+		spd : 0.5
+	});
+	AddEnemy({
+		num : undefined,
+		xpos : room_width / 2,
+		ypos : 0,
+		dir : 270,
+		enemy : 1,
+		tickdel : 0,
+		distance : 0.5,
+		shoottime : 50,
+		follow : false,
+		gun : 1,
+		spd : 0.5
+	});
+	AddEnemy({
+		num : undefined,
+		xpos : 0,
+		ypos : room_height / 2,
+		dir : 0,
+		enemy : 1,
+		tickdel : 0,
+		distance : 0.5,
+		shoottime : 50,
+		follow : false,
+		gun : 1,
+		spd : 0.5
+	});
+	AddEnemy({
+		num : undefined,
+		xpos : room_width,
+		ypos : room_height / 2,
+		dir : 180,
+		enemy : 1,
+		tickdel : 0,
+		distance : 0.5,
+		shoottime : 50,
+		follow : false,
+		gun : 1,
+		spd : 0.5
+	});
 	
 	//Batch 2
-	AddEnemy(undefined, 500, 800, 0, 1, 30, 50, 120, false, 1, 5);
+	AddEnemy({
+		num : undefined,
+		xpos : 950,
+		ypos : 540,
+		dir : 0,
+		enemy : 1,
+		tickdel : 500,
+		distance : 2,
+		shoottime : 0,
+		follow : true,
+		gun : 1,
+		spd : 5
+	});
 }

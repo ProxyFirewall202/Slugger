@@ -3,27 +3,34 @@ _tick += delta;
 
 function inboundData() {
 	var _inbound_data = ds_map_find_value(global.W1Schedule, global.w1_schedule_num);
-	show_debug_message("inbd data: " + string(_inbound_data));
-	show_debug_message("schedule num: " + string(global.w1_schedule_num))
-	return {
-		xpos : _inbound_data.xpos,
-		ypos : _inbound_data.ypos,
-		dir : _inbound_data.dir,
-		etype : _inbound_data.enemy,
-		tickdel : _inbound_data.tickdel,
-		distance : _inbound_data.distance,
-		shoottime : _inbound_data.shoottime,
-		follow : _inbound_data.follow,
-		gun : _inbound_data.gun,
-		spd : _inbound_data.spd
-	};
+	if (global.w1_schedule_num > ds_map_size(global.W1Schedule)) {
+		show_debug_message("No more enemies in schedule, wave finished.")
+		show_debug_message("inbd data: " + "undefined");
+		show_debug_message("schedule num: " + "undefined")
+		return (undefined);
+	} else {
+		show_debug_message("inbd data: " + string(_inbound_data));
+		show_debug_message("schedule num: " + string(global.w1_schedule_num))
+		return {
+			xpos : _inbound_data.xpos,
+			ypos : _inbound_data.ypos,
+			dir : _inbound_data.dir,
+			etype : _inbound_data.enemy,
+			tickdel : _inbound_data.tickdel,
+			distance : _inbound_data.distance,
+			shoottime : _inbound_data.shoottime,
+			follow : _inbound_data.follow,
+			gun : _inbound_data.gun,
+			spd : _inbound_data.spd
+		};
+	}
 }
 
 
 if global._run_state == 1 {
 	//Wave control
 	global._wave_time = clamp(global._wave_time + delta, 0, global._wave_length);
-	if (global.w1_schedule_num >= ds_map_size(global.W1Schedule)) {
+	if (global.w1_schedule_num > ds_map_size(global.W1Schedule)) {
 		global._wave_complete = 1;
 	} else {
 		global._wave_complete = global._wave_time / global._wave_length;
@@ -73,22 +80,20 @@ if global._run_state == 1 {
 
 
 	//Spawn Enemies
-	show_debug_message("last enemy: " + string(_last_enemy));
-	show_debug_message("tickdel: " + string(inboundData().tickdel));
 	if (global._wave_complete != 1) {
-		while (_last_enemy + inboundData().tickdel <= _tick) {
-			global.w1_schedule_num ++;
+		while (_tick >=_last_enemy + inboundData().tickdel) {
 			_last_enemy = _tick;
 			array_push(global._entity_spawns, inboundData());
+			global.w1_schedule_num ++;
 			audio_sound_pitch(snEnemySpawn, random_range(0.9, 1.1) * pitchscale);
 			audio_play_sound(snEnemySpawn, 1, false);
-			if (global.w1_schedule_num == ds_map_size(global.W1Schedule)) {
+			if (global.w1_schedule_num >= ds_map_size(global.W1Schedule)) {
 				break;
 			}
 		}
 	}
 
-
+show_debug_message(string(global._entity_spawns));
 	
 	//Element check
 	if (_tick > _element_last_change_frame && _element_key_unpressed == false) {

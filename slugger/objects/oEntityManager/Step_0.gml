@@ -23,6 +23,8 @@
 		ypos : _data.ypos
 	};
 	
+	show_debug_message("SPAWNING ENEMY AT: " + string(_spawn));
+	
     var _enemy_instance = instance_create_layer(_spawn.xpos, _spawn.ypos, "Instances", _enemy_object, _tmp);
 	var _enemy_data = {
         instance : _enemy_instance,
