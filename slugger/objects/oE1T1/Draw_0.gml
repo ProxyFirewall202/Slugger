@@ -1,6 +1,6 @@
 if (_hit == 1) gpu_set_fog(true,c_white,0,0);
 draw_self();
-if _state == 1 && _step > _spawn_step {
+if (_state != 2) {
     event_inherited();
 }
 

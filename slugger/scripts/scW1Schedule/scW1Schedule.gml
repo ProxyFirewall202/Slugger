@@ -18,7 +18,7 @@ function scW1Schedule(){
 		dir : 90,
 		enemy : 1,
 		tickdel : 0,
-		distance : 0.5,
+		distance : 100,
 		shoottime : 20,
 		follow : false,
 		gun : 1,
@@ -31,7 +31,7 @@ function scW1Schedule(){
 		dir : 270,
 		enemy : 1,
 		tickdel : 0,
-		distance : 0.5,
+		distance : 100,
 		shoottime : 50,
 		follow : false,
 		gun : 1,
@@ -44,7 +44,7 @@ function scW1Schedule(){
 		dir : 0,
 		enemy : 1,
 		tickdel : 0,
-		distance : 0.5,
+		distance : 100,
 		shoottime : 50,
 		follow : false,
 		gun : 1,
@@ -57,7 +57,7 @@ function scW1Schedule(){
 		dir : 180,
 		enemy : 1,
 		tickdel : 0,
-		distance : 0.5,
+		distance : 100,
 		shoottime : 50,
 		follow : false,
 		gun : 1,
@@ -65,17 +65,140 @@ function scW1Schedule(){
 	});
 	
 	//Batch 2
+	//Two enemies that come out from each side very fast and follow player, delay in between
 	AddEnemy({
 		num : undefined,
-		xpos : 950,
-		ypos : 540,
+		xpos : room_width,
+		ypos : room_height / 2,
 		dir : 0,
 		enemy : 1,
-		tickdel : 500,
-		distance : 2,
+		tickdel : 1200,
+		distance : infinity,
 		shoottime : 0,
 		follow : true,
 		gun : 1,
-		spd : 5
+		spd : 3
+	});
+	AddEnemy({
+		num : undefined,
+		xpos : 0,
+		ypos : room_height / 2,
+		dir : 0,
+		enemy : 1,
+		tickdel : 400,
+		distance : infinity,
+		shoottime : 0,
+		follow : true,
+		gun : 1,
+		spd : 3
+	});
+	
+	//Batch 3
+	//Four enemies come from top of screen fast then stop at different distances
+	AddEnemy({
+		num : undefined,
+		xpos : room_width - 320,
+		ypos : 0,
+		dir : 270,
+		enemy : 1,
+		tickdel : 500,
+		distance : 20,
+		shoottime : 60,
+		follow : false,
+		gun : 1,
+		spd : 15
+	});
+	AddEnemy({
+		num : undefined,
+		xpos : room_width - 720,
+		ypos : 0,
+		dir : 270,
+		enemy : 1,
+		tickdel : 60,
+		distance : 15,
+		shoottime : 60,
+		follow : false,
+		gun : 1,
+		spd : 15
+	});
+	AddEnemy({
+		num : undefined,
+		xpos : room_width - 1120,
+		ypos : 0,
+		dir : 270,
+		enemy : 1,
+		tickdel : 60,
+		distance : 10,
+		shoottime : 60,
+		follow : false,
+		gun : 1,
+		spd : 15
+	});
+	AddEnemy({
+		num : undefined,
+		xpos : room_width - 1520,
+		ypos : 0,
+		dir : 270,
+		enemy : 1,
+		tickdel : 60,
+		distance : 5,
+		shoottime : 60,
+		follow : false,
+		gun : 1,
+		spd : 15
+	});
+	//Batch 4
+	//Four enemies come from bottom of screen fast then stop at different distances
+	AddEnemy({
+		num : undefined,
+		xpos : room_width - 320,
+		ypos : room_height,
+		dir : 90,
+		enemy : 1,
+		tickdel : 500,
+		distance : 20,
+		shoottime : 60,
+		follow : false,
+		gun : 1,
+		spd : 15
+	});
+	AddEnemy({
+		num : undefined,
+		xpos : room_width - 720,
+		ypos : room_height,
+		dir : 90,
+		enemy : 1,
+		tickdel : 60,
+		distance : 15,
+		shoottime : 60,
+		follow : false,
+		gun : 1,
+		spd : 15
+	});
+	AddEnemy({
+		num : undefined,
+		xpos : room_width - 1120,
+		ypos : room_height,
+		dir : 90,
+		enemy : 1,
+		tickdel : 60,
+		distance : 10,
+		shoottime : 60,
+		follow : false,
+		gun : 1,
+		spd : 15
+	});
+	AddEnemy({
+		num : undefined,
+		xpos : room_width - 1520,
+		ypos : room_height,
+		dir : 90,
+		enemy : 1,
+		tickdel : 60,
+		distance : 5,
+		shoottime : 60,
+		follow : false,
+		gun : 1,
+		spd : 15
 	});
 }

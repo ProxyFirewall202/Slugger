@@ -74,6 +74,9 @@ global.EnemyD = ds_map_create();
 ds_map_add(global.EnemyD, "oE1T1", 10);
 ds_map_add(global.EnemyD, "oE1T4", 40);
 
+global.EnemyHBarOffset = ds_map_create();
+ds_map_add(global.EnemyHBarOffset, "oE1T1", 0);
+
 global._slug_max_health = 100;
 
 _started = false

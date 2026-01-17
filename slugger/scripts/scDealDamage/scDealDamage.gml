@@ -1,5 +1,3 @@
-// Script assets have changed for v2.3.0 see
-// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scDealDamage(instance, weapon, xposit, yposit, ){
 	instance._last_hit = instance._step;
 	instance._hit = 1;

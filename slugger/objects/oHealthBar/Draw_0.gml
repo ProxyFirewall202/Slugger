@@ -4,10 +4,10 @@ var _health_ratio = my_health / _my_data.maxhealth;
 
 var scaled_width = sprite_get_width(sHealthBarMain) * _health_ratio;
 
-var _fg_y = (ypos - sprite_get_height(sHealthBarMain) / 2) - spr_height / 2;
+var _fg_y = ((ypos - sprite_get_height(sHealthBarMain) / 2) - spr_height / 2) + ds_map_find_value(global.EnemyHBarOffset, object_get_name(_my_data.instance.object_index));
 var _fg_x = (xpos - sprite_get_width(sHealthBarMain) / 2);
 
-var _bg_y = (ypos - sprite_get_height(sHealthBarBG) / 2) - spr_height / 2;
+var _bg_y = ((ypos - sprite_get_height(sHealthBarBG) / 2) - spr_height / 2) + ds_map_find_value(global.EnemyHBarOffset, object_get_name(_my_data.instance.object_index));
 var _bg_x = xpos - sprite_get_width(sHealthBarBG) / 2;
 
 var color_full = make_color_rgb(0, 200, 0);
@@ -27,7 +27,7 @@ var _lscaled_width = sprite_get_width(sHealthBarMain) * _lhealth_ratio;
 
 _lscaled_width = lerp(_lscaled_width, scaled_width, clamp((tick - last_update) / 100, 0, 1));
 	
-var _lfg_y = (ypos - sprite_get_height(sHealthBarMain) / 2) - spr_height / 2;
+var _lfg_y = ((ypos - sprite_get_height(sHealthBarMain) / 2) - spr_height / 2) + ds_map_find_value(global.EnemyHBarOffset, object_get_name(_my_data.instance.object_index));
 var _lfg_x = (xpos - sprite_get_width(sHealthBarMain) / 2);
 	
 draw_sprite_stretched_ext(sHealthBarMain, 1, _lfg_x, _lfg_y, _lscaled_width, sprite_get_height(sHealthBarMain), c_white, 0.4);
@@ -49,6 +49,6 @@ font_enable_effects(fDLEComicLowercase, true, {
 	glowStart : 0.3,
 	glowEnd : 3,
 	glowColour : c_red});
-draw_text_transformed_color(xpos, ypos - 50, string(my_health) + "/" + string(_my_data.maxhealth) + " HP", 0.8, 0.8, 0, c_red, c_red, c_red, c_red, 1);
+draw_text_transformed_color(xpos, _fg_y - 10, string(my_health) + "/" + string(_my_data.maxhealth) + " HP", 0.8, 0.8, 0, c_red, c_red, c_red, c_red, 1);
 
 instance_destroy();
