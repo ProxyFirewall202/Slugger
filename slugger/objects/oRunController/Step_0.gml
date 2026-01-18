@@ -190,6 +190,7 @@ if global._run_state == 1 {
 		global._run_state = 0;
 		with (all) {
 			if (run_only == 1) {
+				scPostRunCleanup();
 				instance_destroy();
 			}
 		}

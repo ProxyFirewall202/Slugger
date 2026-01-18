@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scPostRunCleanup",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scPostRunCleanup",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
