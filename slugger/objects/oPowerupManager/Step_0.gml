@@ -3,6 +3,9 @@ image_index += round(delta);
 if (_despawning) {
 	image_alpha -= delta / 100;
 	if image_alpha < 0.03 instance_destroy();
+	if (image_index > 60) {
+		image_index = 0;
+	}
 } else if (visible == true) {
 	if (image_index < 62) {
 		if (place_meeting(x, y, oSlug)) {
@@ -35,7 +38,7 @@ if (_despawning) {
 			image_index = 0;
 		}
 		
-		if (_tick > 300) _despawning = true;
+		if (_tick > 600) _despawning = true;
 		if (_id == 2 && global._slug_health == global._max_slug_health) _despawning = true;
 		
 	}

@@ -30,7 +30,6 @@ var _minutes = 2;
 var _seconds = 45;
 global._wave_length = (_minutes * 60 + _seconds) * game_get_speed(gamespeed_fps);
 
-global._wave_length = 7200;
 global._wave_time = undefined;
 global._weapon_cooldown = 30;
 global._single_instances = ds_map_create();
