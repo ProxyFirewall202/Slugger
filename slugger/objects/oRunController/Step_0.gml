@@ -9,8 +9,8 @@ function inboundData() {
 		show_debug_message("schedule num: " + "undefined")
 		return (undefined);
 	} else {
-		show_debug_message("inbd data: " + string(_inbound_data));
-		show_debug_message("schedule num: " + string(global.w1_schedule_num))
+		//show_debug_message("inbd data: " + string(_inbound_data));
+		//show_debug_message("schedule num: " + string(global.w1_schedule_num))
 		return {
 			xpos : _inbound_data.xpos,
 			ypos : _inbound_data.ypos,
@@ -81,8 +81,9 @@ if global._run_state == 1 {
 
 	//Spawn Enemies
 	if (global._wave_complete != 1) {
-		while (_tick >=_last_enemy + inboundData().tickdel) {
+		while (_tick >=_last_enemy + inboundData().tickdel || global._dev_skip_wave) {
 			_last_enemy = _tick;
+			global._dev_skip_wave = false;
 			array_push(global._entity_spawns, inboundData());
 			global.w1_schedule_num ++;
 			audio_sound_pitch(snEnemySpawn, random_range(0.9, 1.1) * pitchscale);
@@ -93,7 +94,7 @@ if global._run_state == 1 {
 		}
 	}
 
-show_debug_message(string(global._entity_spawns));
+//show_debug_message(string(global._entity_spawns));
 	
 	//Element check
 	if (_tick > _element_last_change_frame && _element_key_unpressed == false) {

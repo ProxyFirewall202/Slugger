@@ -92,3 +92,6 @@ repeat (ds_map_size(global.W1Schedule)) {
     show_debug_message("Key: " + string(current_key) + ", Value: " + string(current_value));
     current_key = ds_map_find_next(global.W1Schedule, current_key);
 }
+
+global._dev_skip_wave = false;
+global._dev_kill = false;

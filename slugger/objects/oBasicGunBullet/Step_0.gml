@@ -17,7 +17,7 @@ if (place_meeting(x, y, oEnemyManager)) {
 		global._scrshake.mag += 2;
 		global._scrshake.spd += 2;
 		
-		scDealDamage(_instance, 0, x, y);
+		scDealDamage(_instance, 0, x, y, undefined);
     }
 	instance_destroy();
 }

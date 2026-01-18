@@ -1,3 +1,4 @@
+run_only = 1;
 global._distort_count ++;
 angle = 0;
 _angle_state = -30;

@@ -49,6 +49,6 @@ if (_state == 0) {
     }
 }
 
-if (_my_id == 1) {
+/*if (_my_id == 1) {
 	show_debug_message("state: " + string(_state) + ", _step: " + string(_step) + ", death step: " + string(_death_step));
-}
+}*/

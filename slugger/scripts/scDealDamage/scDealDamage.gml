@@ -1,9 +1,14 @@
-function scDealDamage(instance, weapon, xposit, yposit, ){
+function scDealDamage(instance, weapon, xposit, yposit, idmg){
 	instance._last_hit = instance._step;
 	instance._hit = 1;
 	
 	var _weapon_ext = "w" + string(weapon);
-	var _my_damage = global._weapon_info[$ _weapon_ext].damage;
+	var _my_damage;
+	if (idmg == undefined) {
+		_my_damage = global._weapon_info[$ _weapon_ext].damage;
+	} else {
+		_my_damage = idmg;
+	}
     var _dmg;
     var _crit;
     if random(1) < global._weapon_info[$ _weapon_ext].crit {
