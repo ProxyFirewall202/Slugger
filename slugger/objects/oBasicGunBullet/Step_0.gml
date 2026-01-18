@@ -1,5 +1,7 @@
 _tick ++;
 
+//if (global.prewarm) visible = false;
+
 image_index += round(delta);
 
 x += lengthdir_x(_vel, direction) * delta;
@@ -9,7 +11,7 @@ if (x < 0 || x > room_width || y < 0 || y > room_height) {
     instance_destroy();
 }
 
-if (place_meeting(x, y, oEnemyManager)) {
+if (place_meeting(x, y, oEnemyManager) && global.prewarm == false) {
 	var _instance = instance_nearest(x, y, oEnemyManager);
 	if (_instance._state != 2) {
         

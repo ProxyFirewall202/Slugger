@@ -2,9 +2,9 @@ global._tick += delta;
 
 //show_debug_message(delta);
 
-if (mouse_check_button(mb_left) && !_started) {
+if (mouse_check_button(mb_left) && !_started && !global.prewarm) {
 	global._run_state = (!global._run_state);
-	audio_play_sound(snW1Music, 10, true);
+	audio_play_sound(snW1Music, 10, false);
 	if global._run_state == 1 {
 		scInitRun();
 	} else {

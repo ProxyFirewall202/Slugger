@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scSystemPreWarm",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scSystemPreWarm",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -43,6 +43,7 @@
     {"name":"scDistortionEffect","order":2,"path":"scripts/scDistortionEffect/scDistortionEffect.yy",},
     {"name":"scInitRun","order":1,"path":"scripts/scInitRun/scInitRun.yy",},
     {"name":"scSpawnData","order":1,"path":"scripts/scSpawnData/scSpawnData.yy",},
+    {"name":"scSystemPreWarm","order":9,"path":"scripts/scSystemPreWarm/scSystemPreWarm.yy",},
     {"name":"scW1Schedule","order":2,"path":"scripts/scW1Schedule/scW1Schedule.yy",},
     {"name":"snComboRiser","order":9,"path":"sounds/snComboRiser/snComboRiser.yy",},
     {"name":"snComboRiser2","order":10,"path":"sounds/snComboRiser2/snComboRiser2.yy",},

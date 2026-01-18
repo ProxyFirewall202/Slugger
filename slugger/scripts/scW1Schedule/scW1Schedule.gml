@@ -17,7 +17,7 @@ function scW1Schedule(){
 		ypos : room_height,
 		dir : 90,
 		enemy : 1,
-		tickdel : 0,
+		tickdel : 60,
 		distance : 100,
 		shoottime : 20,
 		follow : false,

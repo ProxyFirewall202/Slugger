@@ -94,3 +94,8 @@ repeat (ds_map_size(global.W1Schedule)) {
 
 global._dev_skip_wave = false;
 global._dev_kill = false;
+
+global._bullets = ds_map_create();
+
+global.prewarm = true;
+scSystemPreWarm();

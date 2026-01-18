@@ -73,6 +73,7 @@
     {"id":{"name":"scEnumFindKey","path":"scripts/scEnumFindKey/scEnumFindKey.yy",},},
     {"id":{"name":"scInitRun","path":"scripts/scInitRun/scInitRun.yy",},},
     {"id":{"name":"scSpawnData","path":"scripts/scSpawnData/scSpawnData.yy",},},
+    {"id":{"name":"scSystemPreWarm","path":"scripts/scSystemPreWarm/scSystemPreWarm.yy",},},
     {"id":{"name":"scW1Schedule","path":"scripts/scW1Schedule/scW1Schedule.yy",},},
     {"id":{"name":"snBasicGunShoot","path":"sounds/snBasicGunShoot/snBasicGunShoot.yy",},},
     {"id":{"name":"snComboRiser","path":"sounds/snComboRiser/snComboRiser.yy",},},
