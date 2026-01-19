@@ -19,6 +19,7 @@ global._last_enemy_killed = global._tick;
 repeat(irandom(ds_map_find_value(global.EnemyWS, string(object_get_name(object_index)))) + global._combo) {
 	instance_create_layer(x + random_range(-20, 20), y + random_range(-20, 20), "Collectables", oWarpedSoul);
 }
+ds_map_delete(global._enemies, _my_id);
 part_emitter_region(global.p_system, global.EShockwaveInnerEmitter, x, x, y, y, ps_shape_rectangle, ps_distr_linear);
 part_emitter_burst(global.p_system, global.EShockwaveInnerEmitter, global.EShockwaveInnerType, 1);
 part_emitter_region(global.p_system, global.EShockwaveOuterEmitter, x, x, y, y, ps_shape_rectangle, ps_distr_linear);

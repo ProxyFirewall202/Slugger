@@ -6,3 +6,4 @@ _element_last_change_frame = 0;
 _element_key_unpressed = false;
 _eswitch = false;
 _last_enemy = 0;
+_wave_finish = 0;

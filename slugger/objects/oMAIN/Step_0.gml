@@ -2,21 +2,11 @@ global._tick += delta;
 
 //show_debug_message(delta);
 
-if (mouse_check_button(mb_left) && !_started && !global.prewarm) {
-	global._run_state = (!global._run_state);
-	audio_play_sound(snW1Music, 10, false);
-	if global._run_state == 1 {
-		scInitRun();
-		show_debug_message("JOIERJGOIJEIGF");
-	} else {
-		with (all) {
-			if (run_only == 1) {
-				instance_destroy();
-			}
-		}
-	}
-	_started = true;
+if (mouse_check_button(mb_left) && global._run_state == 0) {
+	scInitRun();
 }
+
+
 
 fx_set_parameter(global._screenshake_info, "g_Magnitude", global._scrshake.mag);
 fx_set_parameter(global._screenshake_info, "g_ShakeSpeed", global._scrshake.spd);
@@ -40,7 +30,7 @@ if (global._run_state) {
 
 	if (keyboard_check_pressed(ord("K"))) global._dev_kill = true;
 
-	if (global._dev_kill) {
+	if (global._dev_kill && global._enemy_count > 0) {
 		show_debug_message("DEV KILL EXECUTED - enemy nearest to the coordinates 0,0 has been killed!")
 		var _instance = instance_find(oEnemyManager, irandom(instance_number(oEnemyManager) - 1));
 		if (_instance._state != 2) {

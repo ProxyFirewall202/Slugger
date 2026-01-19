@@ -4,7 +4,6 @@ scGameInit();
 global._tick = -1;
 global._run_state = 0;
 global._wave = 0;
-_started = false
 
 //Screenshake init
 global._screenshake_info = fx_create("_filter_screenshake");
@@ -14,6 +13,15 @@ layer_set_fx("ScreenShake", global._screenshake_info);
 
 //Static data
 global._slug_max_health = 100;
+
+global._weapon_info = {
+	w0 : {
+		damage : 5, 
+		crit : 0.13,
+		name : "basicgun",
+		obj : oBasicGun
+    }
+};
 
 global._elements = ["sl", "f", "i", "v", "s", "sm"];
 global._element_colours = {
@@ -50,7 +58,6 @@ ds_map_add(global.WaveTimes, 1, _time);
 
 //W1 Scheduler
 global.W1Schedule = ds_map_create();
-global.w1_schedule_num = 1;
 scW1Schedule();
 show_debug_message("↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓    W1 SCHEDULE    ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓");
 var current_key = ds_map_find_first(global.W1Schedule);
@@ -59,8 +66,3 @@ repeat (ds_map_size(global.W1Schedule)) {
     show_debug_message("Key: " + string(current_key) + ", Value: " + string(current_value));
     current_key = ds_map_find_next(global.W1Schedule, current_key);
 }
-
-//prewarm
-global._bullets = ds_map_create();
-global.prewarm = true;
-scSystemPreWarm();

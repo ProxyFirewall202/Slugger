@@ -26,8 +26,9 @@ function inboundData() {
 	}
 }
 
-
 if global._run_state == 1 {
+	audio_sound_pitch(snW1Music, pitchscale);
+	
 	//Wave control
 	global._wave_time = clamp(global._wave_time + delta, 0, global._wave_length);
 	if (global.w1_schedule_num > ds_map_size(global.W1Schedule)) {
@@ -35,18 +36,19 @@ if global._run_state == 1 {
 	} else {
 		global._wave_complete = global._wave_time / global._wave_length;
 	}
-	/*if global._wave_complete == 1 {
-		global._run_state = 0;
-		with (all) {
-			if (run_only == 1) {
-				instance_destroy();
-			}
-		}
-	}*/
+	if (global._wave_complete == 1 && global._enemy_count == 0) {
+		//_wave_finish = _tick;
+		scPostRunCleanup();
+		exit;
+	}
+	//if (_wave_finish > 0 && _tick > _wave_finish + 120) {
+		//scPostRunCleanup();
+		//exit;
+	//}
 	
 	//Combo
 	audio_sound_pitch(snComboRiser, pitchscale);
-	if (global._tick >= global._last_enemy_killed + 60) {
+	if (global._tick >= global._last_enemy_killed + 300) {
 		global._combo = 0;
 		audio_stop_sound(snComboRiser);
 		audio_stop_sound(snComboRiser2);
@@ -56,29 +58,6 @@ if global._run_state == 1 {
 		audio_play_sound(snComboRiser2, 1, false);
 	}
 	
-	//Spawn Enemies
-	/*var _spawn_rate;
-	if global._wave_complete < 0.7 {
-		_spawn_rate = delta / 81;
-	} else {
-		_spawn_rate = delta / 21;
-	}
-	if ((random(1) < _spawn_rate) && (global._wave_complete < 1)) {
-		var _edge = irandom(3);
-		var _x = (_edge == 1) ? room_width : ((_edge == 3) ? 0 : (irandom(room_width)));
-		var _y = (_edge == 0) ? 0 : ((_edge == 2) ? room_height : (irandom(room_height)));
-		var _data = {
-			etype : 1,
-			xpos : _x,
-			ypos : _y
-		}
-		array_push(global._entity_spawns, _data);
-		audio_sound_pitch(snEnemySpawn, random_range(0.9, 1.1) * pitchscale);
-		audio_play_sound(snEnemySpawn, 1, false);
-	};*/
-
-
-
 	//Spawn Enemies
 	if (global._wave_complete != 1) {
 		while (_tick >=_last_enemy + inboundData().tickdel || global._dev_skip_wave) {
@@ -93,8 +72,6 @@ if global._run_state == 1 {
 			}
 		}
 	}
-
-//show_debug_message(string(global._entity_spawns));
 	
 	//Element check
 	if (_tick > _element_last_change_frame && _element_key_unpressed == false) {
@@ -187,13 +164,7 @@ if global._run_state == 1 {
 	
 	//Death check
 	if (global._slug_health <= 0) {
-		global._run_state = 0;
-		with (all) {
-			if (run_only == 1) {
-				scPostRunCleanup();
-				instance_destroy();
-			}
-		}
+		scPostRunCleanup();
 	}
 	
 	//Create powerup
