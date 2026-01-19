@@ -17,6 +17,7 @@ function scInitRun(){
 	var _music = asset_get_index("snW" + string(global._wave) + "Music");
 	audio_play_sound(_music, 10, false);
 	global.w1_schedule_num = 1;
+	global._wave_finish = 0;
     
 	//Reset
 	global._max_slug_health = 100;

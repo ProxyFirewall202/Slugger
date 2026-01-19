@@ -9,8 +9,6 @@ function inboundData() {
 		show_debug_message("schedule num: " + "undefined")
 		return (undefined);
 	} else {
-		//show_debug_message("inbd data: " + string(_inbound_data));
-		//show_debug_message("schedule num: " + string(global.w1_schedule_num))
 		return {
 			xpos : _inbound_data.xpos,
 			ypos : _inbound_data.ypos,
@@ -36,15 +34,13 @@ if global._run_state == 1 {
 	} else {
 		global._wave_complete = global._wave_time / global._wave_length;
 	}
-	if (global._wave_complete == 1 && global._enemy_count == 0) {
-		//_wave_finish = _tick;
+	if (global._wave_complete == 1 && global._enemy_count == 0 && global._wave_finish == 0) {
+		global._wave_finish = _tick;
+	}
+	if (global._wave_finish > 0 && _tick > global._wave_finish + 300) {
 		scPostRunCleanup();
 		exit;
 	}
-	//if (_wave_finish > 0 && _tick > _wave_finish + 120) {
-		//scPostRunCleanup();
-		//exit;
-	//}
 	
 	//Combo
 	audio_sound_pitch(snComboRiser, pitchscale);
@@ -165,6 +161,7 @@ if global._run_state == 1 {
 	//Death check
 	if (global._slug_health <= 0) {
 		scPostRunCleanup();
+		exit;
 	}
 	
 	//Create powerup

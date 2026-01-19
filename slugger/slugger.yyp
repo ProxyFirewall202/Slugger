@@ -97,6 +97,7 @@
     {"id":{"name":"sBasicGun","path":"sprites/sBasicGun/sBasicGun.yy",},},
     {"id":{"name":"sBasicGunBullet","path":"sprites/sBasicGunBullet/sBasicGunBullet.yy",},},
     {"id":{"name":"sBlank","path":"sprites/sBlank/sBlank.yy",},},
+    {"id":{"name":"sCrosshair","path":"sprites/sCrosshair/sCrosshair.yy",},},
     {"id":{"name":"sDefaultBG","path":"sprites/sDefaultBG/sDefaultBG.yy",},},
     {"id":{"name":"sDmgT1","path":"sprites/sDmgT1/sDmgT1.yy",},},
     {"id":{"name":"sE1Base","path":"sprites/sE1Base/sE1Base.yy",},},

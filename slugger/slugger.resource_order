@@ -66,6 +66,7 @@
     {"name":"sBasicGun","order":2,"path":"sprites/sBasicGun/sBasicGun.yy",},
     {"name":"sBasicGunBullet","order":3,"path":"sprites/sBasicGunBullet/sBasicGunBullet.yy",},
     {"name":"sBlank","order":10,"path":"sprites/sBlank/sBlank.yy",},
+    {"name":"sCrosshair","order":48,"path":"sprites/sCrosshair/sCrosshair.yy",},
     {"name":"sDefaultBG","order":4,"path":"sprites/sDefaultBG/sDefaultBG.yy",},
     {"name":"sDmgT1","order":44,"path":"sprites/sDmgT1/sDmgT1.yy",},
     {"name":"sE1Bullet","order":2,"path":"sprites/sE1Bullet/sE1Bullet.yy",},
