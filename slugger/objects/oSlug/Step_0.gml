@@ -28,8 +28,16 @@ if (random(1) < _spawn_rate) {
 _xvel *= exp(delta * ln(0.9));
 _yvel *= exp(delta * ln(0.9));
 
-//Point towards mouse
-image_angle = point_direction(x, y, mouse_x, mouse_y);
+//Point towards crosshair
+var phi = point_direction(x, y, oCrosshair.x, oCrosshair.y);
+var D = point_distance(x, y, oCrosshair.x, oCrosshair.y);
+if (D < 1) D = 1;  // Safety
+
+var P = 34;  // TUNING VALUE: Perp offset (px). Start @ ~4-6; see table below
+var arg = clamp(-P / D, -1, 1);
+var delta_rad = arcsin(arg);
+var aim_dir = phi + radtodeg(delta_rad);
+image_angle = aim_dir;
 
 //Set size
 image_xscale = _my_size;

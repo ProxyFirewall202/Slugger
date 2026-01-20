@@ -20,4 +20,7 @@ function scInitInstances(){
     
     // Create run controller
     instance_create_layer(x, y, "HUD", oRunController);
+	
+	// Create crosshair
+    instance_create_layer(x, y, "HUD", oCrosshair);
 }

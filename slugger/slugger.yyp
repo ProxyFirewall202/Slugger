@@ -48,6 +48,7 @@
     {"id":{"name":"fDLEComicLowercase","path":"fonts/fDLEComicLowercase/fDLEComicLowercase.yy",},},
     {"id":{"name":"oBasicGun","path":"objects/oBasicGun/oBasicGun.yy",},},
     {"id":{"name":"oBasicGunBullet","path":"objects/oBasicGunBullet/oBasicGunBullet.yy",},},
+    {"id":{"name":"oCrosshair","path":"objects/oCrosshair/oCrosshair.yy",},},
     {"id":{"name":"oDistortionEffect","path":"objects/oDistortionEffect/oDistortionEffect.yy",},},
     {"id":{"name":"oDmgT1","path":"objects/oDmgT1/oDmgT1.yy",},},
     {"id":{"name":"oE1T1","path":"objects/oE1T1/oE1T1.yy",},},
