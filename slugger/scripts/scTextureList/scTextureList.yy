@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scTextureList",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scTextureList",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

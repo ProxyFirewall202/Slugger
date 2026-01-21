@@ -2,9 +2,9 @@ global._tick += delta;
 
 //show_debug_message(delta);
 
-if (mouse_check_button(mb_left) && global._run_state == 0) {
-	scInitRun();
-}
+//if (mouse_check_button(mb_left) && global._run_state == 0 && global._preload_done) {
+	//scInitRun();
+//}
 
 
 

@@ -18,4 +18,10 @@ function scGameInit(){
 	display_reset(0, false);
 
 	scGenericInit();
+	
+	global._preload_percent = 0;
+	global._preload_done = false;
+	instance_create_layer(0, 0, "Instances", oPreloader);
+	
+	show_debug_overlay(false, false);
 }

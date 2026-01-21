@@ -7,6 +7,7 @@ function scInitRun(){
 	global._distort_count = 0;
 	global._entity_spawns = [];
 	global._enemies = ds_map_create();
+	global._enemy_count = 0;
 
     //Set wave
     global._wave = 1;
