@@ -1,0 +1,1 @@
+draw_sprite(_spriteref, _animation_idx, x, y);
