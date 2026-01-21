@@ -21,6 +21,7 @@ function scTextureList(){
 		sPartSlugMove,
 		sE1Base,
 		sE1Bullet,
-		sE1Gun1
+		sE1Gun1,
+		sW1Crate
 	];
 }

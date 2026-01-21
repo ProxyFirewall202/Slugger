@@ -85,6 +85,7 @@
     {"name":"sSlugger","order":46,"path":"sprites/sSlugger/sSlugger.yy",},
     {"name":"sThumbnail","order":49,"path":"sprites/sThumbnail/sThumbnail.yy",},
     {"name":"sW1BG","order":1,"path":"sprites/sW1BG/sW1BG.yy",},
+    {"name":"sW1Crate","order":50,"path":"sprites/sW1Crate/sW1Crate.yy",},
     {"name":"sWarpedSoul","order":41,"path":"sprites/sWarpedSoul/sWarpedSoul.yy",},
   ],
 }

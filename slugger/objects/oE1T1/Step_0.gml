@@ -33,9 +33,9 @@ if (follow) direction = point_direction(x, y, global._slug_instance.x, global._s
 
 if (_state == 0) {
 	_spawn_index += round(delta);
-    x += lengthdir_x(spd, direction) * delta;
-    y += lengthdir_y(spd, direction) * delta;
-    if _spawn_index > distance {
+    x += lengthdir_x(spd * delta, direction) * delta;
+    y += lengthdir_y(spd * delta, direction) * delta;
+    if (_spawn_index > distance) {
         _state = 1;
         _spawn_step = _step;
         image_index = 0;

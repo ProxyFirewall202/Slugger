@@ -120,6 +120,7 @@
     {"id":{"name":"sSlugger","path":"sprites/sSlugger/sSlugger.yy",},},
     {"id":{"name":"sThumbnail","path":"sprites/sThumbnail/sThumbnail.yy",},},
     {"id":{"name":"sW1BG","path":"sprites/sW1BG/sW1BG.yy",},},
+    {"id":{"name":"sW1Crate","path":"sprites/sW1Crate/sW1Crate.yy",},},
     {"id":{"name":"sWarpedSoul","path":"sprites/sWarpedSoul/sWarpedSoul.yy",},},
   ],
   "resourceType":"GMProject",
