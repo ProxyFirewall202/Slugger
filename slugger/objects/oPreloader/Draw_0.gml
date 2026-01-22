@@ -43,7 +43,7 @@ draw_text_transformed_colour(
 
 
 
-if (keyboard_check_pressed(vk_enter)) _sprite_index = array_length(_sprites_list);
+if (keyboard_check_pressed(vk_backspace)) _sprite_index = array_length(_sprites_list);
 
 if (_thumbnail_tick < 180) {
 	_thumbnail_tick ++;

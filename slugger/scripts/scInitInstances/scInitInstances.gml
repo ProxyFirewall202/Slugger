@@ -1,7 +1,7 @@
 function scInitInstances(){
 	//Create all instances
     // Create W1BG
-	instance_create_layer(x, y, "Background", oW1BG);
+	//instance_create_layer(x, y, "Background", oW1BG);
             
     // Create slug instance
     global._slug_instance = instance_create_layer(room_width / 2, room_height / 2, "Instances", oSlug);
