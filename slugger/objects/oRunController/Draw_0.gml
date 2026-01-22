@@ -16,14 +16,32 @@ if global._run_state == 1 {
 					_info.glow = 0;
 				}
 			}
-			var _glow_start = lerp(0, 0.5, real(_info.glow));
-			var _glow_end = lerp(2, 10, real(_info.glow));
-		
-		
-			if (_info.lifetime <= 30) {
-				_info.alpha = lerp(0, 1, _info.lifetime / 30);
+			
+			var _glow_start;
+			var _glow_end;
+			
+			if (_info.damagetype == 3) {
+				_glow_start = lerp(0, 0.1, real(_info.glow));
+				_glow_end = lerp(1, 3, real(_info.glow));
 			} else {
-				_info.alpha = lerp(1, 0, (_info.lifetime - 30) / 30);
+				_glow_start = lerp(0, 0.5, real(_info.glow));
+				_glow_end = lerp(2, 10, real(_info.glow));
+			}
+				
+				
+			
+		
+			var _lifetime;
+			if (_info.damagetype == 3) {
+				_lifetime = 120;
+			} else {
+				_lifetime = 30;
+			}
+			
+			if (_info.lifetime <= _lifetime) {
+				_info.alpha = lerp(0, 1, _info.lifetime / _lifetime);
+			} else {
+				_info.alpha = lerp(1, 0, (_info.lifetime - _lifetime) / _lifetime);
 			}
 			
 			var _old_data = _current_dmg[_i];
@@ -39,11 +57,16 @@ if global._run_state == 1 {
 				draw_text_transformed_color(_info.realx, _info.realy, "+" + string(_info.damage), _info.scale, _info.scale, 0, _info.colour, _info.colour, _info.colour, _info.colour, _info.alpha);
 			} else if (_info.damagetype == 1) {
 				draw_text_transformed_color(_info.realx, _info.realy, "-" + string(_info.damage), _info.scale, _info.scale, 0, _info.colour, _info.colour, _info.colour, _info.colour, _info.alpha);
-			} else {
+			} else if (_info.damagetype == 2) {
 				draw_text_transformed_color(_info.realx, _info.realy, "x" + string(global._combo) + " Combo", _info.scale, _info.scale, 0, _info.colour, _info.colour, _info.colour, _info.colour, _info.alpha);
+			} else {
+				draw_text_transformed_color(_info.realx, _info.realy, "Crate Found!", _info.scale, _info.scale, 0, _info.colour, _info.colour, _info.colour, _info.colour, _info.alpha);
 			}
 			current_dmg[_i] = _info;
-			if ((_info.lifetime - 30) > 100) _current_dmg[_i] = undefined;
+			if (_info.lifetime > _lifetime * 2) {
+				_current_dmg[_i] = undefined;
+			}
+
 		}
 		_i ++;
 	}

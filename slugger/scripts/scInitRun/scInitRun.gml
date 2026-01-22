@@ -23,7 +23,6 @@ function scInitRun(){
 	//Reset
 	global._max_slug_health = 100;
 	global._slug_health = global._max_slug_health;
-	global._focus = 3000;
 	
     //Manage weapons
     global._current_weapon = 0;

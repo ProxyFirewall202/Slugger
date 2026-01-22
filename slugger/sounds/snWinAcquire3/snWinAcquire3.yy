@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"snWinAcquire3",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":1,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":2.6367707,
+  "exportDir":"",
+  "name":"snWinAcquire3",
+  "parent":{
+    "name":"Sounds",
+    "path":"folders/Sounds.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":48000,
+  "soundFile":"snWinAcquire3.wav",
+  "volume":1.0,
+}

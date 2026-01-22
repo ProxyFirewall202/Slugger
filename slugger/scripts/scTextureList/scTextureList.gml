@@ -22,6 +22,7 @@ function scTextureList(){
 		sE1Base,
 		sE1Bullet,
 		sE1Gun1,
-		sW1Crate
+		sW1Crate,
+		sGlow
 	];
 }

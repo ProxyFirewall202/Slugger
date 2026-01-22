@@ -1,6 +1,3 @@
-
-
-
 draw_set_font(fDLEComicLowercase);
 draw_text_transformed_colour(
 	300,
@@ -15,6 +12,38 @@ draw_text_transformed_colour(
 	c_aqua,
 	1
 );
+draw_text_transformed_colour(
+	400,
+	800,
+	"This game is in pre-alpha and is nowhere near finished!",
+	3,
+	3,
+	0,
+	c_green,
+	c_green,
+	c_aqua,
+	c_aqua,
+	1
+);
+draw_text_transformed_colour(
+	100,
+	900,
+	"Controls: Left ALT to lock to target, WASD to move, left click to shoot, Z for previous element and C for next element.",
+	2,
+	2,
+	0,
+	c_green,
+	c_green,
+	c_aqua,
+	c_aqua,
+	1
+);
+
+
+
+
+
+if (keyboard_check_pressed(vk_enter)) _sprite_index = array_length(_sprites_list);
 
 if (_thumbnail_tick < 180) {
 	_thumbnail_tick ++;

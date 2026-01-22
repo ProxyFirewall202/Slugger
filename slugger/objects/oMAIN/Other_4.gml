@@ -322,4 +322,40 @@ part_type_life(_ptype10, 140, 250);
 _pemit10 = part_emitter_create(_ps);
 global.DamagePartType = _ptype10;
 global.DamagePartEmitter = _pemit10;
+
+//Glint
+var _ptype21 = part_type_create();
+part_type_sprite(_ptype21, sGlint, false, true, false)
+part_type_size(_ptype21, 0.05, 0.2, 0, 0.1);
+part_type_scale(_ptype21, 0.2, 0.2);
+part_type_speed(_ptype21, 1, 2, -0.01, 0);
+part_type_direction(_ptype21, 1, 360, 0, 5);
+part_type_gravity(_ptype21, 0, 270);
+part_type_orientation(_ptype21, 0, 246, 2, 1, false);
+part_type_colour3(_ptype21, $FFFFFF, $FFFFFF, $FFFFFF);
+part_type_alpha3(_ptype21, 1, 1, 0);
+part_type_blend(_ptype21, false);
+part_type_life(_ptype21, 280, 300);
+
+var _pemit21 = part_emitter_create(_ps);
+global.GlintPartType = _ptype21;
+global.GlintPartEmitter = _pemit21;
+
+//WhiteParticle
+var _ptype22 = part_type_create();
+part_type_shape(_ptype22, pt_shape_square);
+part_type_size(_ptype22, 0.05, 0.1, 0, 0);
+part_type_scale(_ptype22, 1, 1);
+part_type_speed(_ptype22, 1, 5, -0.01, 0);
+part_type_direction(_ptype22, 1, 360, 0, 5);
+part_type_gravity(_ptype22, 0, 270);
+part_type_orientation(_ptype22, 0, 0, 5, 0, false);
+part_type_colour3(_ptype22, $FFFFFF, $FFFFFF, $FFFFFF);
+part_type_alpha3(_ptype22, 1, 1, 0);
+part_type_blend(_ptype22, false);
+part_type_life(_ptype22, 140, 250);
+
+var _pemit22 = part_emitter_create(_ps);
+global.WhitePartType = _ptype22;
+global.WhitePartEmitter = _pemit22;
 global.p_system = _ps;

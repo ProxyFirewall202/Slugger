@@ -17,3 +17,12 @@ var _health_bar_data = {
 };
 
 instance_create_layer(x, y, "HUD", oHealthBar, _health_bar_data);
+
+if (oCrosshair._locked == id && global._lock_on) {
+	_select_phase += 0.08;
+	_select_idx = sin(_select_phase) * 20;
+	draw_sprite_ext(sSelectionArrow, 0, x, y + (120 - _select_idx), 0.07, 0.07, 0, c_white, 1);
+	draw_sprite_ext(sSelectionArrow, 0, x, y - (120 - _select_idx), 0.07, 0.07, 180, c_white, 1);
+	draw_sprite_ext(sSelectionArrow, 0, x + (120 - _select_idx), y, 0.07, 0.07, 90, c_white, 1);
+	draw_sprite_ext(sSelectionArrow, 0, x - (120 - _select_idx), y, 0.07, 0.07, 270, c_white, 1);
+}

@@ -70,9 +70,9 @@ if global._run_state == 1 {
 	}
 	
 	//Spawn Crates
-	var _rate = delta / 60;
+	var _rate = delta / 2000;
 	if (random(1) < _rate) {
-		instance_create_layer(irandom(room_width), irandom(room_height), "Instances", oCrate);
+		instance_create_layer(irandom_range(300, room_width - 300), irandom_range(300, room_height - 300), "Instances", oCrate);
 	}
 	
 	//Element check
@@ -231,7 +231,7 @@ if global._run_state == 1 {
 				_colour = make_color_rgb(_r, _g, _b);
 				
 				_scale = lerp(1.2, 2, _info.damage_percent);
-			} else {
+			} else if (_info.damage_type == 2) {
 				var _percent = global._combo / 10;
 				var _r = lerp(76, 191, _percent);
 				var _g = lerp(0, 0, _percent);
@@ -239,6 +239,13 @@ if global._run_state == 1 {
 				_colour = make_color_rgb(_r, _g, _b);
 				
 				_scale = lerp(1.2, 2, _percent);
+			} else {
+				var _r = 255;
+				var _g = 255;
+				var _b = 255;
+				_colour = make_color_rgb(_r, _g, _b);
+				
+				_scale = 8;
 			}
 			
 			var _i = 0;
