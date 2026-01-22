@@ -5,6 +5,7 @@ global._tick = -1;
 global._run_state = 0;
 global._wave = 0;
 global._crates = ds_map_create();
+global._distortion_enabled = false;
 
 //Screenshake init
 global._screenshake_info = fx_create("_filter_screenshake");

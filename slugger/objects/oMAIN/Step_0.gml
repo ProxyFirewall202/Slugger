@@ -43,4 +43,5 @@ if (global._run_state) {
 		}
 		global._dev_kill = false;
 	}
+	if (keyboard_check_pressed(ord("U"))) global._distortion_enabled = !global._distortion_enabled;
 }

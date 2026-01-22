@@ -41,7 +41,7 @@ if (_state == 0) {
         image_index = 0;
     }
 } else  if (_state == 2) {
-	if (_step >= _death_step + 10 && fps > 58) scDistortion(x, y, random(0.2));
+	if (_step >= _death_step + 10 && fps > 58 && global._distortion_enabled) scDistortion(x, y, random(0.2));
 	image_xscale += 0.05 * delta;
 	image_yscale += 0.05 * delta;
 	if (_step >= _death_step + 25) {
