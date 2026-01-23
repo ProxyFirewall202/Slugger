@@ -8,7 +8,7 @@ _yvel += ((keyboard_check(vk_down) || keyboard_check(ord("S"))) - (keyboard_chec
 if (x > room_width) {x = room_width; _xvel -= 13};
 if (x < 0) {x = 0; _xvel += 13};
 if (y > room_height) {y = room_height; _yvel -= 13};
-if (y < 0) {y = 0; _yvel += 13};
+if (y < 100) {y = 100; _yvel += 13};
 
 //Move
 x += _xvel * delta;

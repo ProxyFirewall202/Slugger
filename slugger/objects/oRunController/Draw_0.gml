@@ -70,6 +70,4 @@ if global._run_state == 1 {
 		}
 		_i ++;
 	}
-} else {
-	draw_sprite(sE1Base, 1, 0, 0);
 }

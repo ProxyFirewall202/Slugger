@@ -23,4 +23,7 @@ function scInitInstances(){
 	
 	// Create crosshair
     instance_create_layer(x, y, "HUD", oCrosshair);
+	
+	// Create HUD
+	instance_create_layer(0, 0, "HUD", oRunHUD);
 }

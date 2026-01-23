@@ -27,7 +27,7 @@ function scW1Schedule(){
 	AddEnemy({
 		num : undefined,
 		xpos : room_width / 2,
-		ypos : 0,
+		ypos : 100,
 		dir : 270,
 		enemy : 1,
 		tickdel : 0,
@@ -98,7 +98,7 @@ function scW1Schedule(){
 	AddEnemy({
 		num : undefined,
 		xpos : room_width - 320,
-		ypos : 0,
+		ypos : 100,
 		dir : 270,
 		enemy : 1,
 		tickdel : 500,
@@ -111,7 +111,7 @@ function scW1Schedule(){
 	AddEnemy({
 		num : undefined,
 		xpos : room_width - 720,
-		ypos : 0,
+		ypos : 100,
 		dir : 270,
 		enemy : 1,
 		tickdel : 60,
@@ -124,7 +124,7 @@ function scW1Schedule(){
 	AddEnemy({
 		num : undefined,
 		xpos : room_width - 1120,
-		ypos : 0,
+		ypos : 100,
 		dir : 270,
 		enemy : 1,
 		tickdel : 60,
@@ -137,7 +137,7 @@ function scW1Schedule(){
 	AddEnemy({
 		num : undefined,
 		xpos : room_width - 1520,
-		ypos : 0,
+		ypos : 100,
 		dir : 270,
 		enemy : 1,
 		tickdel : 60,
@@ -232,7 +232,7 @@ function scW1Schedule(){
 	AddEnemy({
 		num : undefined,
 		xpos : 0,
-		ypos : 0,
+		ypos : 100,
 		dir : 315,
 		enemy : 1,
 		tickdel : 0,
@@ -245,7 +245,7 @@ function scW1Schedule(){
 	AddEnemy({
 		num : undefined,
 		xpos : room_width,
-		ypos : 0,
+		ypos : 100,
 		dir : 225,
 		enemy : 1,
 		tickdel : 0,
@@ -260,7 +260,7 @@ function scW1Schedule(){
 	AddEnemy({
 		num : undefined,
 		xpos : room_width,
-		ypos : 0,
+		ypos : 100,
 		dir : 0,
 		enemy : 1,
 		tickdel : 1200,
@@ -273,7 +273,7 @@ function scW1Schedule(){
 	AddEnemy({
 		num : undefined,
 		xpos : room_width / 2,
-		ypos : 0,
+		ypos : 100,
 		dir : 0,
 		enemy : 1,
 		tickdel : 50,
@@ -286,7 +286,7 @@ function scW1Schedule(){
 	AddEnemy({
 		num : undefined,
 		xpos : 0,
-		ypos : 0,
+		ypos : 100,
 		dir : 0,
 		enemy : 1,
 		tickdel : 50,
@@ -394,7 +394,7 @@ function scW1Schedule(){
 	AddEnemy({
 		num : undefined,
 		xpos : room_width - room_width / 4,
-		ypos : 0,
+		ypos : 100,
 		dir : 270,
 		enemy : 1,
 		tickdel : 60,
@@ -407,7 +407,7 @@ function scW1Schedule(){
 	AddEnemy({
 		num : undefined,
 		xpos : room_width / 4,
-		ypos : 0,
+		ypos : 100,
 		dir : 270,
 		enemy : 1,
 		tickdel : 0,
@@ -489,7 +489,7 @@ function scW1Schedule(){
 	AddEnemy({
 		num : undefined,
 		xpos : room_width,
-		ypos : 0,
+		ypos : 100,
 		dir : 0,
 		enemy : 1,
 		tickdel : 300,
@@ -502,7 +502,7 @@ function scW1Schedule(){
 	AddEnemy({
 		num : undefined,
 		xpos : room_width / 2,
-		ypos : 0,
+		ypos : 100,
 		dir : 0,
 		enemy : 1,
 		tickdel : 50,
@@ -515,7 +515,7 @@ function scW1Schedule(){
 	AddEnemy({
 		num : undefined,
 		xpos : 0,
-		ypos : 0,
+		ypos : 100,
 		dir : 0,
 		enemy : 1,
 		tickdel : 50,
@@ -742,7 +742,7 @@ function scW1Schedule(){
 	AddEnemy({
 		num : undefined,
 		xpos : room_width - room_width / 4,
-		ypos : 0,
+		ypos : 100,
 		dir : 270,
 		enemy : 1,
 		tickdel : 60,
@@ -755,7 +755,7 @@ function scW1Schedule(){
 	AddEnemy({
 		num : undefined,
 		xpos : room_width / 4,
-		ypos : 0,
+		ypos : 100,
 		dir : 270,
 		enemy : 1,
 		tickdel : 0,

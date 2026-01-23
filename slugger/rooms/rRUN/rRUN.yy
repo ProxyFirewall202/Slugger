@@ -41,7 +41,7 @@
         {"name":"g_FractalNoisePersistence","type":0,"value":"0.425",},
         {"name":"g_FractalNoiseOffset","type":0,"value":"0",},
         {"name":"g_FractalNoiseOffset","type":0,"value":"0",},
-        {"name":"g_FractalNoiseSpeed","type":0,"value":"0.15",},
+        {"name":"g_FractalNoiseSpeed","type":0,"value":"0.5",},
         {"name":"g_FractalNoiseTintColour","type":1,"value":"#FF00000F",},
         {"name":"g_FractalNoiseTexture","type":2,"value":"_filter_fractal_noise_texture",},
       ],"resourceType":"GMREffectLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},

@@ -36,6 +36,6 @@ if place_meeting(x, y, oSlug) {
 	instance_destroy();
 }
 
-if (x < 0 || x > room_width || y < 0 || y > room_height) {
+if (x < 0 || x > room_width || y < 100 || y > room_height) {
     instance_destroy();
 }

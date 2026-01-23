@@ -3,7 +3,7 @@ run_only = 0;
 scGameInit();
 global._tick = -1;
 global._run_state = 0;
-global._wave = 0;
+global._wave = -1;
 global._crates = ds_map_create();
 global._distortion_enabled = false;
 
@@ -51,6 +51,10 @@ ds_map_add(global.EnemyD, "oE1T4", 40);
 global.EnemyHBarOffset = ds_map_create();
 ds_map_add(global.EnemyHBarOffset, "oE1T1", 0);
 
+global.WaveColour = ds_map_create();
+ds_map_add(global.WaveColour, -1, [0, 0.1, 0, 1.0]);
+ds_map_add(global.WaveColour, 1, [0.06, 0, 0, 1.0]);
+
 global.WaveTimes = ds_map_create()
 var _time = {
 	minutes : 2,
@@ -68,3 +72,8 @@ repeat (ds_map_size(global.W1Schedule)) {
     show_debug_message("Key: " + string(current_key) + ", Value: " + string(current_value));
     current_key = ds_map_find_next(global.W1Schedule, current_key);
 }
+
+//BG init
+global._bg_info = fx_create("_filter_fractal_noise" );
+fx_set_parameter(global._bg_info, "g_FractalNoiseTintColour", ds_map_find_value(global.WaveColour, global._wave));
+layer_set_fx("Noise", global._bg_info);

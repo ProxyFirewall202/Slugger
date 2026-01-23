@@ -19,6 +19,7 @@ function scInitRun(){
 	audio_play_sound(_music, 10, false);
 	global.w1_schedule_num = 1;
 	global._wave_finish = 0;
+	fx_set_parameter(global._bg_info, "g_FractalNoiseTintColour", ds_map_find_value(global.WaveColour, global._wave));
     
 	//Reset
 	global._max_slug_health = 100;
