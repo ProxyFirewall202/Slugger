@@ -67,8 +67,8 @@ if place_meeting(x, y, oSlug) && (_dmg_cooldown < 1) {
 		
 		
 	array_push(global._dmg_dis_queue, _dmg_dis_data);
-	audio_sound_pitch(snHit, lerp(0.98, 1.02, _dmg_percent) * pitchscale);
-	audio_play_sound(snHit, 1, false);
+	audio_sound_pitch(snHit2, lerp(0.98, 1.02, _dmg_percent) * pitchscale);
+	audio_play_sound(snHit2, 1, false);
     _my_health -= _dmg;
 }
 

@@ -4,7 +4,7 @@ function scInitInstances(){
 	//instance_create_layer(x, y, "Background", oW1BG);
             
     // Create slug instance
-    global._slug_instance = instance_create_layer(room_width / 2, room_height / 2, "Instances", oSlug);
+    global._slug_instance = instance_create_layer(room_width / 2, room_height - 100 / 2, "Instances", oSlug);
     
     // Create basic gun
 	var _tmp0 = "w" + string(global._current_weapon);

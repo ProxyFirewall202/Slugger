@@ -18,7 +18,7 @@ global._slug_max_health = 100;
 
 global._weapon_info = {
 	w0 : {
-		damage : 5, 
+		damage : 2, 
 		crit : 0.13,
 		name : "basicgun",
 		obj : oBasicGun
@@ -76,4 +76,5 @@ repeat (ds_map_size(global.W1Schedule)) {
 //BG init
 global._bg_info = fx_create("_filter_fractal_noise" );
 fx_set_parameter(global._bg_info, "g_FractalNoiseTintColour", ds_map_find_value(global.WaveColour, global._wave));
+fx_set_parameter(global._bg_info, "g_FractalNoiseSpeed", 1);
 layer_set_fx("Noise", global._bg_info);

@@ -10,7 +10,7 @@
   "compression":0,
   "compressionQuality":10,
   "conversionMode":0,
-  "duration":10.752,
+  "duration":10.721458,
   "exportDir":"",
   "name":"snHit",
   "parent":{

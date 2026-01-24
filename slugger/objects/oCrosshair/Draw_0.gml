@@ -1,0 +1,1 @@
+draw_sprite_ext(sCrosshair, image_index, x, y, 0.5, 0.5, 0, c_white, 1);

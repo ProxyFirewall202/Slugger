@@ -35,9 +35,11 @@ function scDealDamage(instance, weapon, xposit, yposit, idmg){
 	var _relative_damage = _dmg - _min_damage;
 	var _dmg_percent = _relative_damage / _range;
 		
-		
+    
+    global._scrshake.mag += clamp(lerp(0.01, 2, _dmg / _max_damage), 0.01, 2);
+    global._scrshake.spd += clamp(lerp(0.01, 2, _dmg / _max_damage), 0.01, 2);
 	array_push(global._dmg_dis_queue, _dmg_dis_data);
-	audio_sound_pitch(snHit, lerp(0.9, 2.0, global._combo / 10) * pitchscale);
-	audio_play_sound(snHit, 1, false);
+	audio_sound_pitch(snHit2, lerp(0.9, 2.0, global._combo / 10) * pitchscale);
+	audio_play_sound(snHit2, 1, false);
     instance._my_health -= _dmg;
 }

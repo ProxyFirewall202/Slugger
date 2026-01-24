@@ -1,0 +1,1 @@
+//if (_state == 2) draw_sprite(sWarpedSoul, 0, x, y);

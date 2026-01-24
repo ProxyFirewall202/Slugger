@@ -1,6 +1,6 @@
 window_set_cursor(cr_none);
-x = lerp(x, mouse_x, 0.125);
-y = lerp(y, mouse_y, 0.125);
+x = clamp(lerp(x, mouse_x, 0.125), 0, room_width);
+y = clamp(lerp(y, mouse_y, 0.125), 100, room_height);
 var _frame_lock = false;
 if (global._lock_on == false && keyboard_check_pressed(vk_lalt) && global._enemy_count > 0) {
 	global._lock_on = true;

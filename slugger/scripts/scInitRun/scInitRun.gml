@@ -27,7 +27,7 @@ function scInitRun(){
 	
     //Manage weapons
     global._current_weapon = 0;
-	global._weapon_cooldown = 30;
+	global._weapon_cooldown = 10;
 	global._current_weapon_cooldown = global._weapon_cooldown
 	global._bullets = ds_map_create();
 	global._lock_on = false;

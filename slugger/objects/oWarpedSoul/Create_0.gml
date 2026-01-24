@@ -1,8 +1,11 @@
 run_only = 1;
 image_index = 0;
 image_speed = 0;
-_start_distance = 0;
+_start_distance = undefined;
 _state = 0;
 _tick = 0;
 _vel = 20;
+_start_move = 0;
+_start_x = undefined;
+_start_y = undefined;
 direction = point_direction(x, y, oSlug.x, oSlug.y) - 180;

@@ -72,7 +72,7 @@ if global._run_state == 1 {
 	//Spawn Crates
 	var _rate = delta / 2000;
 	if (random(1) < _rate) {
-		instance_create_layer(irandom_range(300, room_width - 300), irandom_range(300, room_height - 300), "Instances", oCrate);
+		instance_create_layer(irandom_range(300, room_width - 300), irandom_range(400, room_height - 300), "Collectables", oCrate);
 	}
 	
 	//Element check
@@ -178,7 +178,7 @@ if global._run_state == 1 {
 			_id : 1
 		};
 		
-		instance_create_layer(random(room_width), random(room_height), "Collectables", oDmgT1, _id_struct);
+		instance_create_layer(random_range(200, room_width - 200), random_range(300, room_height - 200), "Collectables", oDmgT1, _id_struct);
 	}
 	
 	_spawn_rate = delta / 1001;
@@ -188,7 +188,7 @@ if global._run_state == 1 {
 			_id : 2
 		};
 		
-		instance_create_layer(random(room_width), random(room_height), "Collectables", oHealthP, _id_struct);
+		instance_create_layer(random_range(200, room_width - 200), random_range(300, room_height - 200), "Collectables", oHealthP, _id_struct);
 	}
 	
 	
