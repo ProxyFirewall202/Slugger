@@ -5,3 +5,7 @@ _new_dmg = false;
 _tick = 0;
 _freq = 0;
 _anim = undefined;
+_last_ws = 0;
+_ws_scale = 2.3;
+_last_dmg = 0;
+_dmg_scale = 2.3
